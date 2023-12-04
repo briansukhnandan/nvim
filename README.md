@@ -12,10 +12,10 @@ w.i.p neovim config
 ```
 
 ## common keybinds
-`[t ]t`  - tab navigation
-`<leader>nt` - new tab
-`<leader>ct` - close tab
+- `[t ]t`  - tab navigation
+- `<leader>nt` - new tab
+- `<leader>ct` - close tab
 
-`gd` - open definition (when hovered over something)
+- `gd` - open definition (when hovered over something)
 
-`<leader>tf` - Open Telescope finder
+- `<leader>tf` - Open Telescope finder
