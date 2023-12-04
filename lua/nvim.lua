@@ -16,6 +16,7 @@ vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 
 vim.cmd("set nowrap")
+vim.cmd("set mouse=n")
 
 -- Using <leader>b will show all buffers, you can select a num and hit enter
 vim.cmd("nnoremap <Leader>b :ls<CR>:b<Space>")
