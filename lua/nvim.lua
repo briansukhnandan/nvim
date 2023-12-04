@@ -17,6 +17,9 @@ vim.bo.softtabstop = 2
 
 vim.cmd("set nowrap")
 
+-- Using <leader>b will show all buffers, you can select a num and hit enter
+vim.cmd("nnoremap <Leader>b :ls<CR>:b<Space>")
+
 vim.cmd("nnoremap " .. shortcuts.new_tab .. " <cmd>tabnew<cr>")
 vim.cmd("nnoremap " .. shortcuts.next_tab .. " <cmd>tabnext<cr>")
 vim.cmd("nnoremap " .. shortcuts.prev_tab .. " <cmd>tabprev<cr>")
