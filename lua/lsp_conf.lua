@@ -84,9 +84,9 @@ require('lspconfig')['pyright'].setup {
 require('lspconfig')['tsserver'].setup {
   on_attach = on_attach,
 }
--- require('lspconfig')['eslint'].setup {
---   on_attach = on_attach,
--- }
+require('lspconfig')['eslint'].setup {
+  on_attach = on_attach,
+}
 require('lspconfig')['rust_analyzer'].setup {
   on_attach = on_attach,
   -- Server-specific settings...

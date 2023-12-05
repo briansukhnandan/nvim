@@ -3,6 +3,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
 " General
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'petertriho/nvim-scrollbar'
+Plug 'preservim/nerdtree'
 
 " Git
 Plug 'tpope/vim-fugitive'

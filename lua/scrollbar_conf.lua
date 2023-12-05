@@ -10,7 +10,7 @@ require("scrollbar").setup({
   throttle_ms = 100,
   handle = {
       text = " ",
-      blend = 30, -- Integer between 0 and 100. 0 for fully opaque and 100 to full transparent. Defaults to 30.
+      blend = 0, -- Integer between 0 and 100. 0 for fully opaque and 100 to full transparent. Defaults to 30.
       color = nil,
       color_nr = nil, -- cterm
       highlight = "CursorColumn",
@@ -18,7 +18,7 @@ require("scrollbar").setup({
   },
   marks = {
       Cursor = {
-          text = "•",
+          text = "☺",
           priority = 0,
           gui = nil,
           color = nil,
@@ -27,7 +27,10 @@ require("scrollbar").setup({
           highlight = "Normal",
       },
       Search = { color = colors.orange },
-      Error = { color = colors.error },
+      Error = { 
+        color = colors.error, 
+        priority = 1,
+      },
       Warn = { color = colors.warning },
       Info = { color = colors.info },
       Hint = { color = colors.hint },

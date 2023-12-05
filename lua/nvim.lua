@@ -17,7 +17,6 @@ vim.bo.softtabstop = 2
 
 vim.cmd("set nowrap")
 vim.cmd("set mouse=n")
-
 -- Using <leader>b will show all buffers, you can select a num and hit enter
 vim.cmd("nnoremap <Leader>b :ls<CR>:b<Space>")
 
@@ -25,6 +24,12 @@ vim.cmd("nnoremap " .. shortcuts.new_tab .. " <cmd>tabnew<cr>")
 vim.cmd("nnoremap " .. shortcuts.next_tab .. " <cmd>tabnext<cr>")
 vim.cmd("nnoremap " .. shortcuts.prev_tab .. " <cmd>tabprev<cr>")
 vim.cmd("nnoremap " .. shortcuts.close_tab .. " <cmd>tabc<cr>")
+vim.cmd("nnoremap <leader>ff :DiffviewOpen<cr>")
+vim.cmd("nnoremap <leader>F :DiffviewClose<cr>")
+vim.cmd("nnoremap E :Explore<cr>")
+
+vim.cmd("nnoremap <leader>t :NERDTreeToggle<cr>")
+vim.cmd("nnoremap <leader>T :NERDTreeFind<cr>")
 
 -- Neovim comes with a default typescript indentation plugin:
 -- https://github.com/jason0x43/vim-js-indent. The plugin behaves super weirdly
