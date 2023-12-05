@@ -31,6 +31,9 @@ vim.cmd("nnoremap E :Explore<cr>")
 vim.cmd("nnoremap <leader>t :NERDTreeToggle<cr>")
 vim.cmd("nnoremap <leader>T :NERDTreeFind<cr>")
 
+-- paste from system clipboard
+vim.cmd("nnoremap <leader>pc :r !pbpaste<cr>")
+
 -- Neovim comes with a default typescript indentation plugin:
 -- https://github.com/jason0x43/vim-js-indent. The plugin behaves super weirdly
 -- for comments. It is apparently trying to do prosaic indentation where the
