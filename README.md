@@ -19,3 +19,8 @@ w.i.p neovim config
 - `gd` - open definition (when hovered over something)
 
 - `<leader>tf` - Open Telescope finder
+
+## NERDTree specific
+- `<leader>t` - Toggle the tree
+- `<leader>T` - Open tree and focus dir of current buffer
+- m (after opening NERDtree) - file menu
