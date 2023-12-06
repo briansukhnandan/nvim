@@ -8,13 +8,12 @@ vim.opt.background = "dark"
 vim.o.termguicolors = true
 vim.opt.guicursor = "i:block"
 
-vim.wo.relativenumber = true
-
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 
+vim.cmd("set number relativenumber")
 vim.cmd("set nowrap")
 vim.cmd("set mouse=n")
 -- Using <leader>b will show all buffers, you can select a num and hit enter
