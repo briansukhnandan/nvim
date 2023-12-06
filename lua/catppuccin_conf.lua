@@ -34,4 +34,4 @@ require("catppuccin").setup({
   custom_highlights = {},
 })
 
-vim.cmd('let g:catppuccin_flavour = "mocha"')
+vim.cmd('let g:catppuccin_flavour = "frappe"')

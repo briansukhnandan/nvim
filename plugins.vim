@@ -4,10 +4,13 @@ call plug#begin('$HOME/.config/nvim/plugged')
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'petertriho/nvim-scrollbar'
 Plug 'preservim/nerdtree'
+Plug 'windwp/nvim-ts-autotag'
+Plug 'windwp/nvim-autopairs'
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tommcdo/vim-fugitive-blame-ext'
+Plug 'f-person/git-blame.nvim'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -41,6 +44,7 @@ Plug 'ellisonleao/gruvbox.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
+Plug 'Mofiqul/dracula.nvim'
 
 " language-specific plugins
 Plug 'Vimjas/vim-python-pep8-indent'

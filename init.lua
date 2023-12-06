@@ -8,3 +8,6 @@ require("lsp_conf") ---------------------- languages server protocol
 require("cmp_conf") ---------------------- neovim-cmp (completion suggestions)
 require("statusline") -------------------- status line at the bottom of the UI
 require("scrollbar_conf") ---------------- scrollbar
+
+require("nvim-ts-autotag").setup() ------- autotagging
+require("nvim-autopairs").setup() ------- autopairs (brackets)

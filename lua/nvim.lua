@@ -2,7 +2,7 @@ local shortcuts = require("shortcuts").my_custom_shortcuts
 
 vim.g.mapleader = ","
 
-vim.g.colors_name = "sonokai"
+vim.g.colors_name = "dracula"
 vim.opt.background = "dark"
 
 vim.o.termguicolors = true
