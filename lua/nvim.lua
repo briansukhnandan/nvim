@@ -27,8 +27,8 @@ vim.cmd("nnoremap <leader>ff :DiffviewOpen<cr>")
 vim.cmd("nnoremap <leader>F :DiffviewClose<cr>")
 vim.cmd("nnoremap E :Explore<cr>")
 
-vim.cmd("nnoremap <leader>t :NERDTreeToggle<cr>")
-vim.cmd("nnoremap <leader>T :NERDTreeFind<cr>")
+vim.cmd("nnoremap <leader>n :NERDTreeToggle<cr>")
+vim.cmd("nnoremap <leader>N :NERDTreeFind<cr>")
 
 -- paste from system clipboard
 vim.cmd("nnoremap <leader>pc :r !pbpaste<cr>")
