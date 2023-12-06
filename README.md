@@ -17,6 +17,8 @@ w.i.p neovim config
 - `<leader>ct` - close tab
 
 - `gd` - open definition (when hovered over something)
+- `K` - see type when hovered over variable
+- `:vsp` - open split
 
 - `<leader>tf` - Open Telescope finder
 
