@@ -9,8 +9,8 @@ Plug 'windwp/nvim-autopairs'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'tommcdo/vim-fugitive-blame-ext'
 Plug 'f-person/git-blame.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -21,7 +21,7 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
 
-" Autocompletion
+" cmp
 Plug 'arkav/lualine-lsp-progress'
 Plug 'dcampos/cmp-snippy'
 Plug 'dcampos/nvim-snippy'

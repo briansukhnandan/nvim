@@ -10,4 +10,6 @@ require("statusline") -------------------- status line at the bottom of the UI
 require("scrollbar_conf") ---------------- scrollbar
 
 require("nvim-ts-autotag").setup() ------- autotagging
-require("nvim-autopairs").setup() ------- autopairs (brackets)
+require("nvim-autopairs").setup() -------- autopairs (brackets)
+
+require("gitsigns").setup() -------------- Gitsigns 
