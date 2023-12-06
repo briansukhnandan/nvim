@@ -21,6 +21,6 @@ w.i.p neovim config
 - `<leader>tf` - Open Telescope finder
 
 ## NERDTree specific
-- `<leader>t` - Toggle the tree
-- `<leader>T` - Open tree and focus dir of current buffer
+- `<leader>n` - Toggle the tree
+- `<leader>N` - Open tree and focus dir of current buffer
 - m (after opening NERDtree) - file menu
