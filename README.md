@@ -2,6 +2,7 @@
 w.i.p neovim config
 
 # Setup
+Clone into `~/.config`
 ```
 :PlugInstall
 
