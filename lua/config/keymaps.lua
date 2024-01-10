@@ -24,6 +24,6 @@ Map("n", "<ESC>", ":noh<CR><CR>", silent)
 
 -- Tabs
 Map("n", "<leader>nt", "<cmd>tabnew<cr>", { desc = "New Tab" })
-Map("n", "<C-z>l", "<cmd>tabnext<cr>", { desc = "Next Tab" })
-Map("n", "<C-z>h", "<cmd>tabprev<cr>", { desc = "Previous Tab" })
+Map("n", "<C-x><Right>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+Map("n", "<C-x><Left>", "<cmd>tabprev<cr>", { desc = "Previous Tab" })
 Map("n", "<leader>ct", "<cmd>bd<cr>", { desc = "Close Tab" })
