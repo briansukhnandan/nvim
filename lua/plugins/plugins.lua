@@ -22,6 +22,9 @@ return {
   -- Git Blame
   { "f-person/git-blame.nvim" },
 
+  -- HTML auto-close / auto-rename
+  { "windwp/nvim-ts-autotag" },
+
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
