@@ -19,6 +19,9 @@ return {
     },
   },
 
+  -- Git Blame
+  { "f-person/git-blame.nvim" },
+
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
