@@ -27,9 +27,3 @@ Map("n", "<leader>nt", "<cmd>tabnew<cr>", { desc = "New Tab" })
 Map("n", "<C-x><Right>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 Map("n", "<C-x><Left>", "<cmd>tabprev<cr>", { desc = "Previous Tab" })
 Map("n", "<leader>ct", "<cmd>bd<cr>", { desc = "Close Tab" })
-
--- Telescope
--- TODO - Perhaps properly map these, I just went and
--- remapped the default LazyVim bindings lol.
-Map("n", "<leader><Space>", "<leader>tf", { desc = "Find files" })
-Map("n", "<leader>/", "<leader>tg", { desc = "Live grep" })
