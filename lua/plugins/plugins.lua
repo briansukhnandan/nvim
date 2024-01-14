@@ -22,7 +22,29 @@ return {
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
-    -- change some options
+    keys = {
+      {
+        "<leader>tf",
+        function()
+          require("telescope.builtin").find_files()
+        end,
+        desc = "Find File",
+      },
+      {
+        "<leader>tg",
+        function()
+          require("telescope.builtin").live_grep()
+        end,
+        desc = "Live Grep",
+      },
+      {
+        "<leader>tb",
+        function()
+          require("telescope.builtin").buffers()
+        end,
+        desc = "Telescope buffers",
+      },
+    },
     opts = {
       defaults = {
         layout_strategy = "vertical",
