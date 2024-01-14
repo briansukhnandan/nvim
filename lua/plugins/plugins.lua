@@ -18,4 +18,22 @@ return {
       colorscheme = "dracula",
     },
   },
+
+  -- Telescope
+  {
+    "nvim-telescope/telescope.nvim",
+    -- change some options
+    opts = {
+      defaults = {
+        layout_strategy = "vertical",
+        layout_config = {
+          vertical = {
+            preview_cutoff = 0,
+          },
+        },
+        sorting_strategy = "ascending",
+        winblend = 0,
+      },
+    },
+  },
 }
