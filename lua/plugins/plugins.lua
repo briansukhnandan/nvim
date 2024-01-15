@@ -26,7 +26,12 @@ return {
   { "windwp/nvim-ts-autotag" },
 
   -- Scrollbar
-  { "Xuyuanp/scrollbar.nvim" },
+  {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require("scrollbar").setup()
+    end,
+  },
 
   -- Telescope
   {
