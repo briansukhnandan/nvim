@@ -10,6 +10,13 @@ return {
     -- },
   },
 
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      autoformat = false,
+    },
+  },
+
   -- Set default colorscheme to dracula.
   { "Mofiqul/dracula.nvim" },
   {
