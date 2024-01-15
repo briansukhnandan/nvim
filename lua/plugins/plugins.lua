@@ -25,6 +25,9 @@ return {
   -- HTML auto-close / auto-rename
   { "windwp/nvim-ts-autotag" },
 
+  -- Scrollbar
+  { "Xuyuanp/scrollbar.nvim" },
+
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
