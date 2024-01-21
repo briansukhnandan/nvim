@@ -6,5 +6,5 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 ## My specific tweaks
 - New Tab: `<leader><Tab><Tab>`
 - Close Tab (and buffer): `<leader><Tab>c`
-- Prev Tab: `<leader><Tab>h` -> `<leader><Tab>[`
-- Next Tab: `<leader><Tab>l` -> `<leader><Tab>]`
+- Prev Buffer: `[b`
+- Next Tab: `]b`
