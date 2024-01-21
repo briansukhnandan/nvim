@@ -13,11 +13,10 @@ function Map(mode, lhs, rhs, opts)
   keymap(mode, lhs, rhs, options)
 end
 
--- Don't yank on delete char
+-- Don't yank on delete char in normal mode.
+-- We still want to retain in visual.
 Map("n", "x", '"_x', silent)
 Map("n", "X", '"_X', silent)
-Map("v", "x", '"_x', silent)
-Map("v", "X", '"_X', silent)
 
 -- Remove highlights
 Map("n", "<ESC>", ":noh<CR><CR>", silent)
