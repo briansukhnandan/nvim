@@ -25,6 +25,11 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 ### Fugitive 
 - Launch Fugitive in a buffer: `<leader>gg`
 
+### Glance (VSCode-like LSP Previews)
+Glance Superkey (`<GS>`) - `<leader>g`
+- Glance at LSP definition - `<GS>d` (to not conflict with the built-in `gd`!)
+- Glance at LSP references - `<GS>r`
+
 ### Additional Plugins
 - `f-person/git-blame.nvim`
 - `petertriho/nvim-scrollbar`
@@ -32,6 +37,7 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 - `ellisonleao/glow.nvim`
 - `HiPhish/rainbow-delimiters.nvim`
 - `tpope/vim-fugitive`
+- `DNLHC/glance.nvim`
 
 ### Disabled Plugins
 - `rcarriga/nvim-notify`

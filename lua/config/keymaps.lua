@@ -40,3 +40,9 @@ Map("n", "<leader>md", "<cmd>Glow<cr>", { desc = "Preview Markdown in current bu
 
 -- Fugitive (Git)
 Map("n", "<leader>gg", "<cmd>Git<cr>", { desc = "Launch Vim Fugitive" })
+
+-- Glance (LSP)
+Map("n", "<leader>gr", "<cmd>Glance references<cr>")
+Map("n", "<leader>gd", "<cmd>Glance definitions<cr>")
+Map("n", "<leader>gy", "<cmd>Glance type_definitions<cr>")
+Map("n", "<leader>gm", "<cmd>Glance implementations<cr>")

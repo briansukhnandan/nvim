@@ -39,6 +39,9 @@ return {
   -- Git 
   { "tpope/vim-fugitive" },
 
+  -- Glance at LSP definitons
+  { "dnlhc/glance.nvim" },
+
   -- Scrollbar
   {
     "petertriho/nvim-scrollbar",
