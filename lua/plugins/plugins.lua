@@ -46,7 +46,17 @@ return {
   {
     "petertriho/nvim-scrollbar",
     config = function()
-      require("scrollbar").setup()
+      require("scrollbar").setup({
+        handle = {
+          blend = 75,
+          color = "#f9fcfb",
+        },
+        marks = {
+          Cursor = {
+            text = "★",
+          }
+        },
+      })
     end,
   },
 
