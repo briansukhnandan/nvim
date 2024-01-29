@@ -18,3 +18,11 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 - Find files: `<TS>f`
 - Live Grep: `<TS>g`
 - View Buffers: `<TS>b`
+
+### Additional Plugins
+- `f-person/git-blame.nvim`
+- `petertriho/nvim-scrollbar`
+- `windwp/nvim-ts-autotag`
+
+### Disabled Plugins
+- `rcarriga/nvim-notify`
