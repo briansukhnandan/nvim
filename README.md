@@ -10,8 +10,8 @@ I personally use the default `<leader>` key - `<space>`, however my config also 
 Buffer Superkey (`<BS>`) - `<leader><Tab>`
 - New Buffer - `<BS><Tab>`
 - Close Buffer - `<BS>c`
-- Prev Buffer - `<BS>,` (alternatively `<BS>h`)
-- Next Buffer - `<BS>.` (alternatively `<BS>l`)
+- Prev Buffer - `<BS>[` (alternatively `<BS>h`)
+- Next Buffer - `<BS>]` (alternatively `<BS>l`)
 
 ### Telescope
 Telescope Superkey (`<TS>`) - `<leader><space>`
