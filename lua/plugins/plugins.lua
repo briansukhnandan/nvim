@@ -45,21 +45,21 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       {
-        "<leader>tf",
+        "<leader><space>f",
         function()
           require("telescope.builtin").find_files()
         end,
         desc = "Find File",
       },
       {
-        "<leader>tg",
+        "<leader><space>g",
         function()
           require("telescope.builtin").live_grep()
         end,
         desc = "Live Grep",
       },
       {
-        "<leader>tb",
+        "<leader><space>b",
         function()
           require("telescope.builtin").buffers()
         end,
