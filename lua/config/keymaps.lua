@@ -21,5 +21,16 @@ Map("n", "X", '"_X', silent)
 -- Remove highlights
 Map("n", "<ESC>", ":noh<CR><CR>", silent)
 
--- Tabs
+-- Tabs (and buffers)
+--
+-- TL;DR
+-- Tab super key (TS) -> Leader + Tab
+-- TS + c -> Close Buffer
+-- TS + Tab -> New Buffer
+-- TS + , (or h) -> Prev Buffer
+-- TS + . (or l) -> Next Buffer
 Map("n", "<leader><Tab>c", "<cmd>bd<cr>", { desc = "Close Tab" })
+Map("n", "<leader><Tab>h", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+Map("n", "<leader><Tab>l", "<cmd>bnext<cr>", { desc = "Next buffer" })
+Map("n", "<leader><Tab>,", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+Map("n", "<leader><Tab>.", "<cmd>bnext<cr>", { desc = "Next buffer" })

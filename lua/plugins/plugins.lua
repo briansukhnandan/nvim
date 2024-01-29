@@ -1,13 +1,8 @@
 return {
-  -- For now disabling nvim-notify
+  -- Disabling nvim-notify
   {
     "rcarriga/nvim-notify",
     enabled = false,
-    -- opts = {
-    --   level = 3,
-    --   render = "minimal",
-    --   stages = "static",
-    -- },
   },
 
   {
