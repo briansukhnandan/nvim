@@ -4,6 +4,7 @@ A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 ## My specific tweaks
+I personally use the default `<leader>` key - `<space>`, however my config also works well if you prefer your `<leader>` key to be `,`
 
 ### Tab (Buffer) Management
 Buffer Superkey (`<BS>`) - `<leader><Tab>`
