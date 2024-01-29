@@ -1,10 +1,4 @@
 return {
-  -- Disabling nvim-notify
-  {
-    "rcarriga/nvim-notify",
-    enabled = false,
-  },
-
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -41,6 +35,9 @@ return {
 
   -- HTML auto-close / auto-rename
   { "windwp/nvim-ts-autotag" },
+
+  -- Git 
+  { "tpope/vim-fugitive" },
 
   -- Scrollbar
   {
@@ -104,5 +101,15 @@ return {
         winblend = 0,
       },
     },
+  },
+
+  --[[
+  -- Any disabled plugins go here 
+  -- List of disabled plugins:
+  -- - nvim-notify
+  --]]
+  {
+    "rcarriga/nvim-notify",
+    enabled = false,
   },
 }
