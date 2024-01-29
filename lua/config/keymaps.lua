@@ -34,3 +34,6 @@ Map("n", "<leader><Tab>h", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 Map("n", "<leader><Tab>l", "<cmd>bnext<cr>", { desc = "Next buffer" })
 Map("n", "<leader><Tab>[", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 Map("n", "<leader><Tab>]", "<cmd>bnext<cr>", { desc = "Next buffer" })
+
+-- Markdown preview (using `glow.nvim`)
+Map("n", "<leader>md", "<cmd>Glow<cr>", { desc = "Preview Markdown in current buffer" })

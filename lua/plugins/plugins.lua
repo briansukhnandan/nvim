@@ -60,6 +60,12 @@ return {
     end,
   },
 
+  -- Markdown Previews
+  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+
+  -- strictly for fun :)
+  { "HiPhish/rainbow-delimiters.nvim" },
+
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
