@@ -21,6 +21,9 @@ Map("n", "X", '"_X', silent)
 -- Remove highlights
 Map("n", "<ESC>", ":noh<CR><CR>", silent)
 
+-- Ctrl+c escapes insert mode.
+Map("i", "<C-c>", "<ESC>", silent)
+
 -- Tabs (and buffers)
 --
 -- TL;DR
