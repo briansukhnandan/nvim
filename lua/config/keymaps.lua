@@ -21,6 +21,8 @@ Map("n", "X", '"_X', silent)
 -- Remove highlights
 Map("n", "<ESC>", ":noh<CR><CR>", silent)
 
+Map("n", "<C-/>", "i", silent)
+
 -- Ctrl+c escapes insert mode.
 Map("i", "<C-c>", "<ESC>", silent)
 
