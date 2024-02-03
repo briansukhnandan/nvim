@@ -51,3 +51,8 @@ Map("n", "<leader>gr", "<cmd>Glance references<cr>")
 Map("n", "<leader>gd", "<cmd>Glance definitions<cr>")
 Map("n", "<leader>gy", "<cmd>Glance type_definitions<cr>")
 Map("n", "<leader>gm", "<cmd>Glance implementations<cr>")
+
+-- Random nick nacks i have for day to day.
+-- The below makes a basic JS/TS group comment block
+-- and leaves in insert mode
+Map("n", "tgc", "i/****/")
