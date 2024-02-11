@@ -14,6 +14,9 @@ Buffer Superkey (`<BS>`) - `<leader><Tab>`
 - Prev Buffer: `<BS>[` (alternatively `<BS>h`)
 - Next Buffer: `<BS>]` (alternatively `<BS>l`)
 
+### Code-related
+- Go to matching bracket / parentheses: `M`
+
 ### Telescope
 Telescope Superkey (`<TS>`) - `<leader><space>`
 - Find files: `<TS>f`
