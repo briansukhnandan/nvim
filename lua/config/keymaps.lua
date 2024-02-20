@@ -43,8 +43,8 @@ Map("i", "<C-c>", "<ESC>", silent)
 -- I also don't really mind ctrl+e/y for scrolling which is 
 -- the default vim scroll bindings so i use alt+e/y for 
 -- scrolling 3.
-Map("n", "<A-s>", "<C-e> 5<C-e>")
-Map("n", "<A-w>", "<C-y> 5<C-y>")
+Map("n", "<A-j>", "<C-e> 5<C-e>")
+Map("n", "<A-k>", "<C-y> 5<C-y>")
 
 Map("n", "<A-e>", "<C-e> 3<C-e>")
 Map("n", "<A-y>", "<C-y> 3<C-y>")
