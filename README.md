@@ -22,6 +22,7 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 - Find files: `<TS>f`
 - Live Grep: `<TS>g`
 - View Buffers: `<TS>b`
+  - Within the buffer selector, delete buffers under the cursor with: `<C-d>`
 
 ### Glow
 - Preview Markdown in the current buffer: `<leader>md`
