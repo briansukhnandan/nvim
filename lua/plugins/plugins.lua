@@ -102,6 +102,13 @@ return {
         },
         sorting_strategy = "ascending",
         winblend = 0,
+        mappings = {
+          -- This allows ctrl+d to delete buffers from the buffer 
+          -- selector in Telescope.
+          i = {
+            ["<c-d>"] = require('telescope.actions').delete_buffer
+          }
+        },
       },
     },
   },

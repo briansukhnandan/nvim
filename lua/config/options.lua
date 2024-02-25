@@ -10,3 +10,22 @@ vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 
 vim.cmd("set noswapfile")
+
+-- Addresses issue where tab in insert mode 
+-- jumps to a snippet that's not yet left.
+-- This leaves snipped when going back to normal
+-- mode.
+function leave_snippet()
+  if
+    ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+    and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+    and not require('luasnip').session.jump_active
+  then
+    require('luasnip').unlink_current()
+  end
+end
+
+-- stop snippets when you leave to normal mode
+vim.api.nvim_command([[
+    autocmd ModeChanged * lua leave_snippet()
+]])
