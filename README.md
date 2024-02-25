@@ -6,6 +6,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 ## My specific tweaks
 - I personally use the default `<leader>` key - `<space>`.
 - However my config also works well if you prefer your `<leader>` key to be `,`!
+- This config also integrates well with Neovide if that's your cup of tea. To increase/decrease scale use `<C-->` and `<C-=>`. By default scale will be set at `0.75`.
 
 ### Tab (Buffer) Management
 Buffer Superkey (`<BS>`) - `<leader><Tab>`
