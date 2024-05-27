@@ -1,6 +1,9 @@
 # nvim
 my config that i use at work everyday 😎
 
+## How do I use it?
+- This uses `vim-plug` as the plugin manager so execute a `:PlugInstall`, restart nvim and you should be good to go!
+
 ## My specific tweaks
 - I personally use the default `<leader>` key - `<space>`.
 - However my config also works well if you prefer your `<leader>` key to be `,`!
