@@ -13,6 +13,9 @@ require('telescope').setup {
         preview_cutoff = 0,
       },
     },
+    preview = {
+      treesitter = false,
+    },
   },
   pickers = {
     find_files = {
