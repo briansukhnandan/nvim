@@ -9,6 +9,7 @@ vim.bo.softtabstop = 2
 
 vim.cmd("set noswapfile")
 vim.cmd("set nowrap")
+vim.cmd("set splitbelow")
 
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 0.75
