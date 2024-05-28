@@ -1,16 +1,16 @@
 # nvim
 my config that i use at work everyday 😎
 
-## How do I use it?
+### How do I use it?
 - This uses `vim-plug` as the plugin manager so execute a `:PlugInstall`, restart nvim and you should be (mostly) good to go!
 - Depending on the language you'll be programming in, you'll also need to download the appropriate treesitter config with `:TSInstall`
 
-## My specific tweaks
+### My specific tweaks
 - I personally use the default `<leader>` key - `<space>`.
 - However my config also works well if you prefer your `<leader>` key to be `,`!
 - This config also integrates well with `Neovide` if that's your cup of tea. To increase/decrease scale use `<C-->` and `<C-=>`. By default scale will be set at `0.75`.
 
-## Splitting Windows
+### Splitting Windows
 - Split Horizontally: `<leader>sh`
 - Split Vertically: `<leader>sv`
 
@@ -20,6 +20,9 @@ Harpoon Superkey (`<HS>`) - `<leader>h`
 - Mark File: `<HS>a`
 - Next File: `<HS>n`
 - Prev File: `<HS>p`
+
+### Mason (LSP)
+- GUI: `<leader>cm`
 
 ### Code-related
 - Go to matching bracket / parentheses: `M`
