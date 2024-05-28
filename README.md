@@ -2,7 +2,8 @@
 my config that i use at work everyday 😎
 
 ## How do I use it?
-- This uses `vim-plug` as the plugin manager so execute a `:PlugInstall`, restart nvim and you should be good to go!
+- This uses `vim-plug` as the plugin manager so execute a `:PlugInstall`, restart nvim and you should be (mostly) good to go!
+- Depending on the language you'll be programming in, you'll also need to download the appropriate treesitter config with `:TSInstall`
 
 ## My specific tweaks
 - I personally use the default `<leader>` key - `<space>`.
