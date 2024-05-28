@@ -9,6 +9,10 @@ my config that i use at work everyday 😎
 - However my config also works well if you prefer your `<leader>` key to be `,`!
 - This config also integrates well with `Neovide` if that's your cup of tea. To increase/decrease scale use `<C-->` and `<C-=>`. By default scale will be set at `0.75`.
 
+## Splitting Windows
+- Split Horizontally: `<leader>sh`
+- Split Vertically: `<leader>sv`
+
 ### Harpoon (Navigation)
 Harpoon Superkey (`<HS>`) - `<leader>h`
 - Quick Menu: `<HS>m`

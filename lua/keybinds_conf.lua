@@ -15,6 +15,10 @@ Map("n", "<Up>", "<Nop>")
 Map("n", "<Down>", "<Nop>")
 Map("n", "<Right>", "<Nop>")
 
+-- Splitting horizontally / vertically
+Map("n", "<Space>sh", "<cmd>sp<cr>")
+Map("n", "<Space>sv", "<cmd>vsp<cr>")
+
 -- Disables moving to Left/Right buffers with Shift+h/l
 Map("n", "H", "<Nop>")
 Map("n", "L", "<Nop>")
