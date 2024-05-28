@@ -11,6 +11,9 @@ require("scrollbar_conf")
 require("catppuccin_conf")
 require("cmp_conf")
 require("mason_conf")
-require("lualine_conf")
 require("neotree_conf")
-require("glow_conf")
+
+-- Out of the box plugins
+require('gitsigns').setup()
+require('glow').setup()
+require('lualine').setup()
