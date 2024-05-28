@@ -21,6 +21,7 @@ Plug 'https://github.com/f-person/git-blame.nvim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'sindrets/diffview.nvim'
 Plug 'ellisonleao/glow.nvim'
+Plug 'justinmk/vim-sneak'
 
 " LSP/cmp
 Plug 'hrsh7th/vim-vsnip'
