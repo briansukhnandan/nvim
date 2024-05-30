@@ -1,4 +1,5 @@
 local apply_shortcut = require("util").apply_shortcut
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local opts = { noremap = true, silent = true }
 apply_shortcut('n', "[d", vim.diagnostic.goto_prev, opts)
@@ -59,13 +60,16 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup({
+  capabilities = capabilities,
   on_attach = on_attach,
 })
 lspconfig.tsserver.setup({
   on_attach = on_attach,
+  capabilities = capabilities,
 })
 lspconfig.lua_ls.setup({
   on_attach = on_attach,
+  capabilities = capabilities,
 })
 
 vim.cmd("nnoremap <Space>cm <cmd>Mason<cr>")

@@ -15,12 +15,14 @@ cmp.setup({
     ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
     ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
   },
-  sources = {
+  sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = 'nvim_lsp_signature_help' },
     { name = "vsnip" },
     { name = "path" },
-  },
+  }, {
+    { name = 'buffer' },
+  })
 })
 
 -- Disable cmp for log files. Since buffer completion is super slow for huge
