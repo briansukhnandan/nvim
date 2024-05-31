@@ -11,8 +11,10 @@ my config that i use at work everyday 😎
 - This config also integrates well with `Neovide` if that's your cup of tea. To increase/decrease scale use `<C-->` and `<C-=>`. By default scale will be set at `0.75`.
 
 ### Splitting Windows
-- Split Horizontally: `<leader>sh`
-- Split Vertically: `<leader>sv`
+- Split Horizontally: `\h`
+- Split Vertically: `\v`
+- Move between splits: `\ + Arrow keys`
+- Resize splits: `\ + ,|.|-|=` (Same controls as vanilla Vim but `<C-w>` becomes `\`)
 
 ### Harpoon (Navigation)
 Harpoon Superkey (`<HS>`) - `<leader>h`
