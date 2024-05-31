@@ -75,10 +75,10 @@ Map("n", "<Space>md", "<cmd>Glow<cr>", { desc = "Preview Markdown in current buf
 Map("n", "<Space>gg", "<cmd>Git<cr>", { desc = "Launch Vim Fugitive" })
 
 -- Glance (LSP)
-Map("n", "<Space>gr", "<cmd>Glance references<cr>")
-Map("n", "<Space>gd", "<cmd>Glance definitions<cr>")
-Map("n", "<Space>gy", "<cmd>Glance type_definitions<cr>")
-Map("n", "<Space>gm", "<cmd>Glance implementations<cr>")
+Map("n", "gR", "<cmd>Glance references<cr>")
+Map("n", "gD", "<cmd>Glance definitions<cr>")
+Map("n", "gY", "<cmd>Glance type_definitions<cr>")
+Map("n", "gM", "<cmd>Glance implementations<cr>")
 
 -- Goes to the matching grouping (Shift+5)
 Map("n", "M", "%")

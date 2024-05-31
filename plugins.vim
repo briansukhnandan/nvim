@@ -22,6 +22,7 @@ Plug 'windwp/nvim-ts-autotag'
 Plug 'sindrets/diffview.nvim'
 Plug 'ellisonleao/glow.nvim'
 Plug 'justinmk/vim-sneak'
+Plug 'dnlhc/glance.nvim'
 
 " LSP/cmp
 Plug 'hrsh7th/vim-vsnip'
