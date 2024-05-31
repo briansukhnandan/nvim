@@ -16,8 +16,13 @@ Map("n", "<Down>", "<Nop>")
 Map("n", "<Right>", "<Nop>")
 
 -- Splitting horizontally / vertically
-Map("n", "<Space>sh", "<cmd>sp<cr>")
-Map("n", "<Space>sv", "<cmd>vsp<cr>")
+-- \ is my substitute for C-w.
+Map("n", "\\h", "<cmd>sp<cr>")
+Map("n", "\\v", "<cmd>vsp<cr>")
+Map("n", "\\=", "<cmd>resize +2<cr>")
+Map("n", "\\-", "<cmd>resize -2<cr>")
+Map("n", "\\.", "<cmd>vertical resize +2<cr>")
+Map("n", "\\,", "<cmd>vertical resize -2<cr>")
 
 -- Disables moving to Left/Right buffers with Shift+h/l
 Map("n", "H", "<Nop>")
