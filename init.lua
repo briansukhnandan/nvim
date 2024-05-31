@@ -18,3 +18,4 @@ require("lualine_conf")
 -- Out of the box plugins
 require('gitsigns').setup()
 require('glow').setup()
+require("fidget").setup()
