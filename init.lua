@@ -13,8 +13,8 @@ require("treesitter_conf")
 require("cmp_conf")
 require("mason_conf")
 require("neotree_conf")
+require("lualine_conf")
 
 -- Out of the box plugins
 require('gitsigns').setup()
 require('glow').setup()
-require('lualine').setup()

@@ -16,6 +16,7 @@ require('telescope').setup {
     preview = {
       treesitter = false,
     },
+    file_ignore_patterns = { "node_modules", "^.git" },
   },
   pickers = {
     find_files = {
@@ -24,7 +25,7 @@ require('telescope').setup {
     colorscheme = {
       enable_preview = true
     }
-  }
+  },
 }
 
 apply_telescope_shortcut("<Space><Space>f", 'find_files')
