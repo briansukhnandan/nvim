@@ -74,6 +74,7 @@ Map("n", "<A-y>", "<C-y> 3<C-y>")
 -- TS + Tab -> New Buffer
 -- TS + , (or h) -> Prev Buffer
 -- TS + . (or l) -> Next Buffer
+Map("n", "<Space><Tab><Tab>", "<cmd>enew<cr>", { desc = "New Buffer" })
 Map("n", "<Space><Tab>c", "<cmd>bd<cr>", { desc = "Close Tab" })
 Map("n", "<Space><Tab>h", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 Map("n", "<Space><Tab>l", "<cmd>bnext<cr>", { desc = "Next buffer" })
