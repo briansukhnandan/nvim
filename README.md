@@ -28,9 +28,6 @@ Toggle Key - `<C-\>`
 - Prefixing the Toggle key with a number will open that Terminal.
     - For example `2<C-\>` opens Terminal 2
 
-### Mason (LSP)
-- GUI: `<leader>cm`
-
 ### Telescope
 Telescope Superkey (`<TS>`) - `<leader><space>`
 - Find files: `<TS>f`
@@ -45,3 +42,9 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 
 ### Fugitive 
 - Launch Fugitive in a buffer: `<leader>gg`
+
+### Mason (LSP)
+- GUI: `<leader>cm`
+
+### Neotree (File Explorer)
+- Toggle: `<leader>e`
