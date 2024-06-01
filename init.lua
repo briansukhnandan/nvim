@@ -14,7 +14,7 @@ require("cmp_conf")
 require("mason_conf")
 require("neotree_conf")
 require("lualine_conf")
-require("toggleterm_conf")
+require("terminal_conf")
 
 -- Out of the box plugins
 require('gitsigns').setup()

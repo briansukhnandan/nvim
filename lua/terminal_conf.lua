@@ -16,7 +16,7 @@ toggleterm.setup{
   },
 }
 
--- Exit
+-- Exit Terminal mode
 vim.keymap.set(
   "t",
   "<esc>",
