@@ -1,41 +1,41 @@
 call plug#begin('$HOME/.config/nvim/plugged')
 
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'nvim-neo-tree/neo-tree.nvim'
-Plug 'MunifTanjim/nui.nvim'
-Plug 'nvimdev/dashboard-nvim'
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'tpope/vim-fugitive'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'ThePrimeagen/harpoon'
-Plug 'petertriho/nvim-scrollbar'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'tpope/vim-commentary'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'cohama/lexima.vim'
-Plug 'https://github.com/f-person/git-blame.nvim'
-Plug 'https://github.com/j-hui/fidget.nvim'
-Plug 'windwp/nvim-ts-autotag'
-Plug 'sindrets/diffview.nvim'
-Plug 'ellisonleao/glow.nvim'
-Plug 'justinmk/vim-sneak'
-Plug 'dnlhc/glance.nvim'
+Plug 'nvim-tree/nvim-web-devicons' " eye candy
+Plug 'nvim-neo-tree/neo-tree.nvim' " file explorer
+Plug 'MunifTanjim/nui.nvim' " UI Library
+Plug 'nvimdev/dashboard-nvim' " Startup Dashboard
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " My theme
+Plug 'tpope/vim-fugitive' " Git wrapper
+Plug 'nvim-lualine/lualine.nvim' " Status line
+Plug 'ThePrimeagen/harpoon' " Buffer manager
+Plug 'petertriho/nvim-scrollbar' " Scrollbar
+Plug 'nvim-lua/plenary.nvim' " Util lib for other plugins
+Plug 'nvim-telescope/telescope.nvim' " File and fuzzy finder
+Plug 'tpope/vim-commentary' " Comment stuff out
+Plug 'lewis6991/gitsigns.nvim' " Git signs in buffer
+Plug 'cohama/lexima.vim' " Autopairs
+Plug 'https://github.com/f-person/git-blame.nvim' " Need be said?
+Plug 'https://github.com/j-hui/fidget.nvim' " LSP status on file open
+Plug 'windwp/nvim-ts-autotag' " Autotagging on HTML
+Plug 'sindrets/diffview.nvim' " View diffs more easily
+Plug 'ellisonleao/glow.nvim' " Preview Markdown
+Plug 'justinmk/vim-sneak' " Jump to any point visible with 3 keystrokes
+Plug 'dnlhc/glance.nvim' " See VSCode like LSP info
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'} " Better terminal configs
 
 " LSP/cmp
+Plug 'nvim-treesitter/nvim-treesitter' 
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-vsnip'
-Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'williamboman/mason.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'williamboman/mason-lspconfig.nvim' " Easy config for Mason and LSP
+Plug 'williamboman/mason.nvim' " Easily manage LSP servers
+Plug 'neovim/nvim-lspconfig' " lsp
+Plug 'hrsh7th/cmp-nvim-lsp' " LSP cmp
+Plug 'hrsh7th/cmp-buffer' " Current buffer cmp
+Plug 'hrsh7th/cmp-path' " Systen path cmp
+Plug 'hrsh7th/cmp-cmdline' " cmp for the cmdline
+Plug 'hrsh7th/nvim-cmp' " cmp itself
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help' " See function signatures as typing
 
 call plug#end()
