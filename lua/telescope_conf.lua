@@ -31,3 +31,8 @@ require('telescope').setup {
 apply_telescope_shortcut("<Space><Space>f", 'find_files')
 apply_telescope_shortcut("<Space><Space>g", 'live_grep')
 apply_telescope_shortcut("<Space><Space>b", 'buffers')
+apply_telescope_shortcut("<Space><Space>j", "jumplist")
+apply_telescope_shortcut("<Space><Space>o", "oldfiles")
+
+-- This one is amazing
+apply_telescope_shortcut("<Space><Space>c", "current_buffer_fuzzy_find")

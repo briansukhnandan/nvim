@@ -34,6 +34,9 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 - Find files: `<TS>f`
 - Live Grep: `<TS>g`
 - View Buffers: `<TS>b`
+- Jump List: `<TS>j`
+- Recent Files: `<TS>o`
+- Current Buffer Fuzzy Finder: `<TS>c`
 
 ### Glow
 - Preview Markdown in the current buffer: `<leader>md`
