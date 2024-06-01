@@ -23,11 +23,13 @@ Harpoon Superkey (`<HS>`) - `<leader>h`
 - Next File: `<HS>n`
 - Prev File: `<HS>p`
 
+### ToggleTerm
+Toggle Key - `<C-\>`
+- Prefixing the Toggle key with a number will open that Terminal.
+    - For example `2<C-\>` opens Terminal 2
+
 ### Mason (LSP)
 - GUI: `<leader>cm`
-
-### Code-related
-- Go to matching bracket / parentheses: `M`
 
 ### Telescope
 Telescope Superkey (`<TS>`) - `<leader><space>`
