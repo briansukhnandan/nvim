@@ -20,16 +20,16 @@ Map("n", "<Right>", "<Nop>")
 -- - Split horizontal/vertical -> \h or \v
 -- - Resizing - Same controls as vim except <C-w> -> \
 -- - Move between splits -> \ + Arrow keys
-Map("n", "\\h", "<cmd>sp<cr>")
-Map("n", "\\v", "<cmd>vsp<cr>")
+Map("n", "\\sh", "<cmd>sp<cr>")
+Map("n", "\\sv", "<cmd>vsp<cr>")
 Map("n", "\\=", "<cmd>resize +2<cr>")
 Map("n", "\\-", "<cmd>resize -2<cr>")
 Map("n", "\\.", "<cmd>vertical resize +2<cr>")
 Map("n", "\\,", "<cmd>vertical resize -2<cr>")
-Map("n", "\\<Down>", "<C-w>j")
-Map("n", "\\<Up>", "<C-w>k")
-Map("n", "\\<Left>", "<C-w>h")
-Map("n", "\\<Right>", "<C-w>l")
+Map("n", "\\j", "<C-w>j")
+Map("n", "\\k", "<C-w>k")
+Map("n", "\\h", "<C-w>h")
+Map("n", "\\l", "<C-w>l")
 
 -- Disables moving to Left/Right buffers with Shift+h/l
 Map("n", "H", "<Nop>")
