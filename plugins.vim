@@ -13,7 +13,7 @@ Plug 'nvim-lua/plenary.nvim' " Util lib for other plugins
 Plug 'nvim-telescope/telescope.nvim' " File and fuzzy finder
 Plug 'tpope/vim-commentary' " Comment stuff out
 Plug 'lewis6991/gitsigns.nvim' " Git signs in buffer
-Plug 'cohama/lexima.vim' " Autopairs
+Plug 'echasnovski/mini.nvim'
 Plug 'https://github.com/f-person/git-blame.nvim' " Need be said?
 Plug 'https://github.com/j-hui/fidget.nvim' " LSP status on file open
 Plug 'windwp/nvim-ts-autotag' " Autotagging on HTML

@@ -15,6 +15,7 @@ require("mason_conf")
 require("neotree_conf")
 require("lualine_conf")
 require("terminal_conf")
+require("mini_conf")
 
 -- Out of the box plugins
 require('gitsigns').setup()
