@@ -13,6 +13,14 @@ require('telescope').setup {
         preview_cutoff = 0,
       },
     },
+    mappings = {
+      n = {
+        ["<c-d>"] = require('telescope.actions').delete_buffer
+      },
+      i = {
+        ["<c-d>"] = require('telescope.actions').delete_buffer
+      }
+    },
     preview = {
       treesitter = false,
     },
