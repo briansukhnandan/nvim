@@ -37,11 +37,11 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 - Recent Files: `<TS>o`
 - Current Buffer Fuzzy Finder: `<TS>c`
 
-### Git Blame
-- Open commit in Github/GitLab - `<C-x>o`
-
 ### Glow
 - Preview Markdown in the current buffer: `<leader>md`
+
+### Git Blame
+- Open commit in Github/GitLab - `<C-x>o`
 
 ### Fugitive 
 - Launch Fugitive in a buffer: `<C-x>g`
