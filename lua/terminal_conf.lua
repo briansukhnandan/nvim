@@ -1,4 +1,5 @@
 local toggleterm = require('toggleterm')
+local map = require("util").map
 
 toggleterm.setup{
   hide_numbers = true,
@@ -17,9 +18,10 @@ toggleterm.setup{
 }
 
 -- Exit Terminal mode
-vim.keymap.set(
-  "t",
-  "<esc>",
-  [[<C-`><C-n>]],
-  { silent = true }
-)
+-- vim.keymap.set(
+--   "t",
+--   "<esc>",
+--   [[<C-x>z]],
+--   { silent = true }
+-- )
+Map("t", "<C-x>z", "<C-\\><C-n>")
