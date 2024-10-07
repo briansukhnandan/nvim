@@ -85,20 +85,10 @@ Map("n", "<Space><Tab>]", "<cmd>bnext<cr>", { desc = "Next buffer" })
 Map("n", "<Space>md", "<cmd>Glow<cr>", { desc = "Preview Markdown in current buffer" })
 
 -- Fugitive (Git)
-Map("n", "<Space>gg", "<cmd>Git<cr>", { desc = "Launch Vim Fugitive" })
+Map("n", "<C-x>g", "<cmd>Git<cr>", { desc = "Launch Vim Fugitive" })
 
 -- Glance (LSP)
 Map("n", "gR", "<cmd>Glance references<cr>")
 Map("n", "gD", "<cmd>Glance definitions<cr>")
 Map("n", "gY", "<cmd>Glance type_definitions<cr>")
 Map("n", "gM", "<cmd>Glance implementations<cr>")
-
--- Goes to the matching grouping (Shift+5)
-Map("n", "M", "%")
-
--- MISC --
-
--- Random nick nacks i have for day to day.
--- The below makes a basic JS/TS group comment block
--- and leaves in insert mode
-Map("n", "tsc", "i/****/")

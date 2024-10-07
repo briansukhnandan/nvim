@@ -24,7 +24,7 @@ Harpoon Superkey (`<HS>`) - `<leader>h`
 - Prev File: `<HS>p`
 
 ### ToggleTerm
-Toggle Key - `<C-\>`
+Toggle Key - `<C-backtick>`
 - Prefixing the Toggle key with a number will open that Terminal.
     - For example `2<C-\>` opens Terminal 2
 
@@ -37,14 +37,17 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 - Recent Files: `<TS>o`
 - Current Buffer Fuzzy Finder: `<TS>c`
 
+### Git Blame
+- Open commit in Github/GitLab - `<C-x>o`
+
 ### Glow
 - Preview Markdown in the current buffer: `<leader>md`
 
 ### Fugitive 
-- Launch Fugitive in a buffer: `<leader>gg`
+- Launch Fugitive in a buffer: `<C-x>g`
 
 ### Mason (LSP)
-- GUI: `<leader>cm`
+- GUI: `<C-x>m`
 
 ### Neotree (File Explorer)
 - Toggle: `<leader>e`

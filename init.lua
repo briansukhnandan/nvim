@@ -16,8 +16,8 @@ require("neotree_conf")
 require("lualine_conf")
 require("terminal_conf")
 require("mini_conf")
+require("gitsigns_conf")
 
 -- Out of the box plugins
-require('gitsigns').setup()
 require('glow').setup()
 require("fidget").setup()

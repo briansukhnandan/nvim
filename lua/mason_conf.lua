@@ -72,4 +72,4 @@ lspconfig.lua_ls.setup({
   capabilities = capabilities,
 })
 
-vim.cmd("nnoremap <Space>cm <cmd>Mason<cr>")
+vim.cmd("nnoremap <C-x>m <cmd>Mason<cr>")
