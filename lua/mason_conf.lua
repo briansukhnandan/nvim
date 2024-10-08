@@ -14,7 +14,7 @@ local on_attach = function(_, bufnr)
   apply_shortcut('n', "gi", vim.lsp.buf.implementation, bufopts)
   apply_shortcut('n', "K", vim.lsp.buf.hover, bufopts)
   apply_shortcut('n', "<Space>cr", vim.lsp.buf.rename, bufopts)
-  apply_shortcut('n', "<Space>ca", vim.lsp.buf.code_action(), bufopts)
+  vim.cmd("nnoremap <Space>ca <cmd>lua vim.lsp.buf.code_action()<cr>")
 
   vim.keymap.set(
     "n", 
