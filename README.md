@@ -27,11 +27,6 @@ Harpoon Superkey (`<HS>`) - `<leader>h`
 - Next File: `<leader>hn`
 - Prev File: `<leader>hp`
 
-### ToggleTerm
-Toggle Key - `<C-backtick>`
-- Prefixing the Toggle key with a number will open that Terminal.
-    - For example `2<C-backtick>` opens Terminal 2
-
 ### Telescope
 Telescope Superkey - `<leader><space>`
 - Find files: `<leader><Space>f`
@@ -41,8 +36,13 @@ Telescope Superkey - `<leader><space>`
 - Recent Files: `<leader><Space>o`
 - Current Buffer Fuzzy Finder: `<leader><Space>c`
 
+### ToggleTerm
+Toggle Key - `<C-backtick>`
+- Prefixing the Toggle key with a number will open that Terminal.
+    - For example `2<C-backtick>` opens Terminal 2
+
 ### Glow
-- Preview Markdown in the current buffer: `<leader>md`
+- Preview Markdown in the current buffer: `<C-x>G`
 
 ### Neotree (File Explorer)
 - Toggle: `<leader>e`

@@ -75,7 +75,7 @@ Map("n", "<Space><Tab>[", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 Map("n", "<Space><Tab>]", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- Markdown preview (using `glow.nvim`)
-Map("n", "<Space>md", "<cmd>Glow<cr>", { desc = "Preview Markdown in current buffer" })
+Map("n", "<C-x>G", "<cmd>Glow<cr>", { desc = "Preview Markdown in current buffer" })
 
 -- Fugitive (Git)
 Map("n", "<C-x>g", "<cmd>Git<cr>", { desc = "Launch Vim Fugitive" })
