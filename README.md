@@ -10,6 +10,10 @@ my config that i use at work everyday 😎
 - However my config also works well if you prefer your `<leader>` key to be `,`!
 - This config also integrates well with `Neovide` if that's your cup of tea. To increase/decrease scale use `<C-->` and `<C-=>`. By default scale will be set at `0.75`.
 
+### Colorscheme
+- Right now I use Atom's One Dark colorscheme.
+- You can toggle between light/dark mode with `<C-x>tt`
+
 ### Splitting Windows
 - Split Horizontally: `\sh`
 - Split Vertically: `\sv`
@@ -18,27 +22,30 @@ my config that i use at work everyday 😎
 
 ### Harpoon (Navigation)
 Harpoon Superkey (`<HS>`) - `<leader>h`
-- Quick Menu: `<HS>m`
-- Mark File: `<HS>a`
-- Next File: `<HS>n`
-- Prev File: `<HS>p`
+- Quick Menu: `<leader>hm`
+- Mark File: `<leader>ha`
+- Next File: `<leader>hn`
+- Prev File: `<leader>hp`
 
 ### ToggleTerm
 Toggle Key - `<C-backtick>`
 - Prefixing the Toggle key with a number will open that Terminal.
-    - For example `2<C-\>` opens Terminal 2
+    - For example `2<C-backtick>` opens Terminal 2
 
 ### Telescope
-Telescope Superkey (`<TS>`) - `<leader><space>`
-- Find files: `<TS>f`
-- Live Grep: `<TS>g`
-- View Buffers: `<TS>b`
-- Jump List: `<TS>j`
-- Recent Files: `<TS>o`
-- Current Buffer Fuzzy Finder: `<TS>c`
+Telescope Superkey - `<leader><space>`
+- Find files: `<leader><Space>f`
+- Live Grep: `<leader><Space>g`
+- View Buffers: `<leader><Space>>b`
+- Jump List: `<leader><Space>j`
+- Recent Files: `<leader><Space>o`
+- Current Buffer Fuzzy Finder: `<leader><Space>c`
 
 ### Glow
 - Preview Markdown in the current buffer: `<leader>md`
+
+### Neotree (File Explorer)
+- Toggle: `<leader>e`
 
 ### Git Blame
 - Open commit in Github/GitLab - `<C-x>o`
@@ -48,6 +55,3 @@ Telescope Superkey (`<TS>`) - `<leader><space>`
 
 ### Mason (LSP)
 - GUI: `<C-x>m`
-
-### Neotree (File Explorer)
-- Toggle: `<leader>e`

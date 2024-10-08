@@ -4,7 +4,7 @@ Plug 'nvim-tree/nvim-web-devicons' " eye candy
 Plug 'nvim-neo-tree/neo-tree.nvim' " file explorer
 Plug 'MunifTanjim/nui.nvim' " UI Library
 Plug 'nvimdev/dashboard-nvim' " Startup Dashboard
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " My theme
+Plug 'navarasu/onedark.nvim'
 Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'nvim-lualine/lualine.nvim' " Status line
 Plug 'ThePrimeagen/harpoon' " Buffer manager
@@ -39,3 +39,6 @@ Plug 'hrsh7th/nvim-cmp' " cmp itself
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help' " See function signatures as typing
 
 call plug#end()
+
+" Disabled for now
+" Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " My theme
