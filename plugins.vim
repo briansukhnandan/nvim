@@ -11,7 +11,6 @@ Plug 'ThePrimeagen/harpoon' " Buffer manager
 Plug 'petertriho/nvim-scrollbar' " Scrollbar
 Plug 'nvim-lua/plenary.nvim' " Util lib for other plugins
 Plug 'nvim-telescope/telescope.nvim' " File and fuzzy finder
-Plug 'tpope/vim-commentary' " Comment stuff out
 Plug 'lewis6991/gitsigns.nvim' " Git signs in buffer
 Plug 'echasnovski/mini.nvim'
 Plug 'https://github.com/f-person/git-blame.nvim' " Need be said?
@@ -20,7 +19,6 @@ Plug 'windwp/nvim-ts-autotag' " Autotagging on HTML
 Plug 'sindrets/diffview.nvim' " View diffs more easily
 Plug 'ellisonleao/glow.nvim' " Preview Markdown
 Plug 'justinmk/vim-sneak' " Jump to any point visible with 3 keystrokes
-Plug 'dnlhc/glance.nvim' " See VSCode like LSP info
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'} " Better terminal configs
 
 " LSP/cmp
@@ -37,8 +35,6 @@ Plug 'hrsh7th/cmp-path' " Systen path cmp
 Plug 'hrsh7th/cmp-cmdline' " cmp for the cmdline
 Plug 'hrsh7th/nvim-cmp' " cmp itself
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help' " See function signatures as typing
+Plug 'dnlhc/glance.nvim' " See VSCode like LSP info
 
 call plug#end()
-
-" Disabled for now
-" Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " My theme

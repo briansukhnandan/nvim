@@ -17,11 +17,4 @@ toggleterm.setup{
   },
 }
 
--- Exit Terminal mode
--- vim.keymap.set(
---   "t",
---   "<esc>",
---   [[<C-x>z]],
---   { silent = true }
--- )
-Map("t", "<C-x>z", "<C-\\><C-n>")
+Map("t", "<Esc>", "<C-\\><C-n>")
