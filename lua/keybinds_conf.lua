@@ -89,3 +89,28 @@ Map("n", "gR", "<cmd>Glance references<cr>")
 Map("n", "gD", "<cmd>Glance definitions<cr>")
 Map("n", "gY", "<cmd>Glance type_definitions<cr>")
 Map("n", "gM", "<cmd>Glance implementations<cr>")
+
+-- Harpoon
+vim.keymap.set(
+  "n", 
+  "<Space>hm", 
+  '<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>'
+)
+
+vim.keymap.set(
+  "n", 
+  "<Space>ha", 
+  '<Cmd>lua require("harpoon.mark").add_file()<CR>'
+)
+
+vim.keymap.set(
+  "n", 
+  "<Space>hn", 
+  '<Cmd>lua require("harpoon.ui").nav_next()<CR>'
+)
+
+vim.keymap.set(
+  "n", 
+  "<Space>hp", 
+  '<Cmd>lua require("harpoon.ui").nav_prev()<CR>'
+)
