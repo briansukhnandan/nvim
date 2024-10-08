@@ -15,8 +15,12 @@ Map("n", "<Right>", "<Nop>")
 -- - Move between splits -> \ + Arrow keys
 Map("n", "\\sh", "<cmd>sp<cr>")
 Map("n", "\\sv", "<cmd>vsp<cr>")
-Map("n", "\\=", "<cmd>resize +2<cr>")
-Map("n", "\\-", "<cmd>resize -2<cr>")
+
+Map("n", "\\=", "<cmd>resize +5<cr>")
+Map("n", "\\-", "<cmd>resize -5<cr>")
+Map("n", "\\+", "<cmd>resize +10<cr>")
+Map("n", "\\_", "<cmd>resize -10<cr>")
+
 Map("n", "\\.", "<cmd>vertical resize +2<cr>")
 Map("n", "\\,", "<cmd>vertical resize -2<cr>")
 Map("n", "\\j", "<C-w>j")
