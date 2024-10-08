@@ -73,5 +73,3 @@ lspconfig.lua_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
-
-vim.cmd("nnoremap <C-x>m <cmd>Mason<cr>")

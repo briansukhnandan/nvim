@@ -1,5 +1,4 @@
 local toggleterm = require('toggleterm')
-local map = require("util").map
 
 toggleterm.setup{
   hide_numbers = true,
@@ -16,5 +15,3 @@ toggleterm.setup{
     },
   },
 }
-
-Map("t", "<Esc>", "<C-\\><C-n>")

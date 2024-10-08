@@ -2,6 +2,9 @@ local keymap = vim.keymap.set
 local silent = { silent = true }
 local map = require("util").map
 
+-- Leave terminal mode with ESC
+Map("t", "<Esc>", "<C-\\><C-n>")
+
 -- Disables arrow keys in Normal mode 
 Map("n", "<Left>", "<Nop>")
 Map("n", "<Up>", "<Nop>")
@@ -114,3 +117,9 @@ vim.keymap.set(
   "<Space>hp", 
   '<Cmd>lua require("harpoon.ui").nav_prev()<CR>'
 )
+
+-- Neotree
+vim.cmd("nnoremap <Space>e <cmd>Neotree toggle<cr>")
+
+-- Mason
+vim.cmd("nnoremap <C-x>m <cmd>Mason<cr>")
