@@ -5,6 +5,13 @@ cmp.setup({
        vim.fn["vsnip#anonymous"](args.body)
     end,
   },
+  -- We want to disable when inside of prompts or in comments
+  enabled = function()
+    local context = require("cmp.config.context")
+    local disabled = false
+    disabled = disabled or context.in_treesitter_capture("comment")
+    return not disabled
+  end,
   mapping = {
     ["<Up>"] = cmp.mapping.select_prev_item(),
     ["<Down>"] = cmp.mapping.select_next_item(),
@@ -12,6 +19,7 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({
       select = true,
     }),
+    ['<C-e>'] = cmp.mapping.abort(),
     ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
     ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
   },
