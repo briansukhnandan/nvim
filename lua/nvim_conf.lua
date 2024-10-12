@@ -12,6 +12,11 @@ vim.cmd("set nowrap")
 vim.cmd("set splitbelow")
 vim.cmd("set clipboard=unnamedplus")
 
+-- For rust, but by default nvim doesn't
+-- respect tab settings. This disables that
+-- behavior.
+vim.g.rust_recommended_style = false
+
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 0.75
   vim.g.neovide_input_macos_alt_is_meta = true
