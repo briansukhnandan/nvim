@@ -58,3 +58,5 @@ Toggle Key - `<C-backtick>`
 
 ### Other helpful bindings
 - Seeing the path of the current buffer: `<leader>F`
+- Scrolling up/down: `<A-j>/<A-k>`
+- Opening the GitLab/GitHub commit under the cursor: `<C-x>o`
