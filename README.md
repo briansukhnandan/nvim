@@ -55,3 +55,6 @@ Toggle Key - `<C-backtick>`
 
 ### Mason (LSP)
 - GUI: `<C-x>m`
+
+### Other helpful bindings
+- Seeing the path of the current buffer: `<leader>F`

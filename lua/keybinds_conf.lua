@@ -46,8 +46,7 @@ Map("n", "d", '"_d', silent)
 -- Remove highlights
 Map("n", "<ESC>", ":noh<CR><CR>", silent)
 
--- Alternative: Ctrl+c escapes insert mode.
-Map("i", "<C-c>", "<ESC>", silent)
+Map("n", "<Space>F", "1<C-g>")
 
 -- Scrolling - Personally I think 5 lines down is 
 -- reasonable esp when scrubbing through large files.
@@ -55,15 +54,8 @@ Map("i", "<C-c>", "<ESC>", silent)
 -- I find it comfortable to use W and S for associativity 
 -- with moving up/down since I play games, so I use alt + w/s 
 -- for scrolling 5.
---
--- I also don't really mind ctrl+e/y for scrolling which is 
--- the default vim scroll bindings so i use alt+e/y for 
--- scrolling 3.
 Map("n", "<A-j>", "<C-e> 5<C-e>")
 Map("n", "<A-k>", "<C-y> 5<C-y>")
-
-Map("n", "<A-e>", "<C-e> 3<C-e>")
-Map("n", "<A-y>", "<C-y> 3<C-y>")
 
 
 -- Tabs (and buffers)
