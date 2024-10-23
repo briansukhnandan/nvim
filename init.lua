@@ -5,6 +5,7 @@
 require("nvim_conf")
 require("keybinds_conf")
 require("dashboard_conf")
+require("fugitive_conf")
 require("telescope_conf")
 require("colorscheme_conf")
 require("treesitter_conf")
