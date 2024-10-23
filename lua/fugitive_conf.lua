@@ -1,4 +1,4 @@
-local map = require("util").map
+require("util")
 
 -- Fugitive (Git)
 Map("n", "<C-x>g", "<cmd>Git<cr>", { desc = "Launch Vim Fugitive" })
