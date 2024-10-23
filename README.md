@@ -57,3 +57,4 @@ Toggle Key - `<C-backtick>`
 - Seeing the path of the current buffer: `<leader>F`
 - Scrolling up/down: `<A-j>/<A-k>`
 - Opening the GitLab/GitHub commit under the cursor: `<C-x>o`
+- Copy the current buffer's path to the system clipboard: `<leader>yp`
