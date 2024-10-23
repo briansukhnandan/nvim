@@ -1,6 +1,6 @@
-local keymap = vim.keymap.set
+require("util")
+
 local silent = { silent = true }
-local map = require("util").map
 
 -- Leave terminal mode with ESC
 Map("t", "<Esc>", "<C-\\><C-n>")
@@ -57,6 +57,9 @@ Map("n", "<Space>F", "1<C-g>")
 Map("n", "<A-j>", "<C-e> 5<C-e>")
 Map("n", "<A-k>", "<C-y> 5<C-y>")
 
+-- Yanks the path of the current buffer and stores
+-- in the system clipboard
+Map("n", "<Space>yp", copy_buf_path_to_clipboard, silent)
 
 -- Tabs (and buffers)
 --
@@ -83,7 +86,7 @@ Map("n", "gY", "<cmd>Glance type_definitions<cr>")
 Map("n", "gM", "<cmd>Glance implementations<cr>")
 
 -- Neotree
-vim.cmd("nnoremap <Space>e <cmd>Neotree toggle<cr>")
+Map("n", "<Space>e", "<cmd>Neotree toggle<cr>")
 
 -- Mason
-vim.cmd("nnoremap <C-x>m <cmd>Mason<cr>")
+Map("n", "<C-x>m", "<cmd>Mason<cr>")
