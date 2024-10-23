@@ -56,7 +56,7 @@ require("mason-lspconfig").setup({
     "lua_ls", 
     "rust_analyzer",
     "pyright",
-    "tsserver"
+    "ts_ls"
   },
 })
 
@@ -65,7 +65,7 @@ lspconfig.pyright.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
