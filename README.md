@@ -20,13 +20,6 @@ my config that i use at work everyday 😎
 - Move between splits: `\ + hjkl`
 - Resize splits: `\ + ,|.|-|=` (Same controls as vanilla Vim but `<C-w>` becomes `\`)
 
-### Harpoon (Navigation)
-Harpoon Superkey (`<HS>`) - `<leader>h`
-- Quick Menu: `<leader>hm`
-- Mark File: `<leader>ha`
-- Next File: `<leader>hn`
-- Prev File: `<leader>hp`
-
 ### Telescope
 Telescope Superkey - `<leader><space>`
 - Find files: `<leader><Space>f`

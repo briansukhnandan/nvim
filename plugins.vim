@@ -7,7 +7,6 @@ Plug 'nvimdev/dashboard-nvim' " Startup Dashboard
 Plug 'navarasu/onedark.nvim' " Atom colorscheme
 Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'nvim-lualine/lualine.nvim' " Status line
-Plug 'ThePrimeagen/harpoon' " Buffer manager
 Plug 'petertriho/nvim-scrollbar' " Scrollbar
 Plug 'nvim-lua/plenary.nvim' " Util lib for other plugins
 Plug 'nvim-telescope/telescope.nvim' " File and fuzzy finder
