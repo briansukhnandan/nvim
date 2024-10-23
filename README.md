@@ -45,6 +45,10 @@ Toggle Key - `<C-backtick>`
 
 ### Fugitive 
 - Launch Fugitive in a buffer: `<C-x>g`
+- Git push --force `:Gpf`
+- Git rebase (Interactive) `:Gri`
+- Git rebase (Continue) `:Grc`
+- Git rebase (Abort) `:Gra`
 
 ### Mason (LSP)
 - GUI: `<C-x>m`
