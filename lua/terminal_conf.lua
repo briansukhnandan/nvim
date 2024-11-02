@@ -15,3 +15,5 @@ toggleterm.setup{
     },
   },
 }
+
+vim.api.nvim_create_user_command('TT', '1ToggleTerm', {})
