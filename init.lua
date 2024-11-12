@@ -17,7 +17,6 @@ require("lualine_conf")
 require("terminal_conf")
 require("mini_conf")
 require("gitsigns_conf")
-require("html_autotag_conf")
 
 -- Out of the box plugins
 require('glow').setup()
