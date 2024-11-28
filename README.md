@@ -14,12 +14,6 @@ my config that i use at work everyday 😎
 - Right now I use Atom's One Dark colorscheme.
 - You can toggle between light/dark mode with `<C-x>tt`
 
-### Splitting Windows
-- Split Horizontally: `\sh`
-- Split Vertically: `\sv`
-- Move between splits: `\ + hjkl`
-- Resize splits: `\ + ,|.|-|=` (Same controls as vanilla Vim but `<C-w>` becomes `\`)
-
 ### Telescope
 Telescope Superkey - `<leader><space>`
 - Find files: `<leader><Space>f`
