@@ -14,7 +14,6 @@ Plug 'lewis6991/gitsigns.nvim' " Git signs in buffer
 Plug 'echasnovski/mini.nvim' " A collection of useful plugins
 Plug 'https://github.com/f-person/git-blame.nvim' " Need be said?
 Plug 'https://github.com/j-hui/fidget.nvim' " LSP status on file open
-Plug 'windwp/nvim-ts-autotag' " Autotagging on HTML
 Plug 'ellisonleao/glow.nvim' " Preview Markdown
 Plug 'justinmk/vim-sneak' " Jump to any point visible with 3 keystrokes
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'} " Better terminal configs
