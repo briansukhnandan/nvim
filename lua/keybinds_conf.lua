@@ -51,6 +51,7 @@ Map("n", "<Space>yp", copy_buf_path_to_clipboard, silent)
 -- TS + . (or l) -> Next Buffer
 Map("n", "<Space><Tab><Tab>", "<cmd>enew<cr>", { desc = "New Buffer" })
 Map("n", "<Space><Tab>c", "<cmd>bd<cr>", { desc = "Close Tab" })
+Map("n", "<Space><Tab>C", "<cmd>bd!<cr>", { desc = "Force Close Tab" })
 Map("n", "<Space><Tab>h", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 Map("n", "<Space><Tab>l", "<cmd>bnext<cr>", { desc = "Next buffer" })
 Map("n", "<Space><Tab>[", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
