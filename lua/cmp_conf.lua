@@ -8,9 +8,17 @@ cmp.setup({
   -- We want to disable when inside of prompts or in comments
   enabled = function()
     local context = require("cmp.config.context")
-    local disabled = false
-    disabled = disabled or context.in_treesitter_capture("comment")
-    return not disabled
+    local inside_of_comment = context.in_treesitter_capture("comment")
+    local inside_of_logfile = vim.bo.filetype == "log"
+
+    local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+    local filetype = vim.bo.filetype
+
+    -- Disable in neotree/Telescope
+    local is_prompt = buftype == "prompt"
+    local is_neotree_popup = filetype == "neo-tree-popup" or filetype == "neo-tree"
+
+    return not inside_of_comment and not inside_of_logfile and not is_prompt and not is_neotree_popup
   end,
   mapping = {
     ["<Up>"] = cmp.mapping.select_prev_item(),
@@ -32,14 +40,3 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
-
--- Disable cmp for log files. Since buffer completion is super slow for huge
--- files
-vim.api.nvim_create_autocmd({"BufEnter"}, {
-  pattern = "*.log",
-  callback = function ()
-    if vim.bo.filetype == "log" then
-      cmp.setup.buffer { enabled = false }
-    end
-  end}
-)
