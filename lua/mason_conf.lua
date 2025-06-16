@@ -15,32 +15,31 @@ local on_attach = function(_, bufnr)
   apply_shortcut('n', "gr", vim.lsp.buf.references, bufopts)
   apply_shortcut('n', "gi", vim.lsp.buf.implementation, bufopts)
   apply_shortcut('n', "K", vim.lsp.buf.hover, bufopts)
+  apply_shortcut('n', "<Space>ca", vim.lsp.buf.code_action, bufopts)
   apply_shortcut('n', "<Space>cr", vim.lsp.buf.rename, bufopts)
 
   -- Misc LSP Related shortcuts
-  vim.cmd("nnoremap <Space>ca <cmd>lua vim.lsp.buf.code_action()<cr>")
-
   vim.keymap.set(
-    "n", 
-    "[w", 
+    "n",
+    "[w",
     "<Cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })<CR>"
   )
 
   vim.keymap.set(
-    "n", 
-    "]w", 
+    "n",
+    "]w",
     "<Cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })<CR>"
   )
 
   vim.keymap.set(
-    "n", 
-    "[e", 
+    "n",
+    "[e",
     "<Cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>"
   )
 
   vim.keymap.set(
-    "n", 
-    "]e", 
+    "n",
+    "]e",
     "<Cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>"
   )
 end
@@ -56,6 +55,7 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
+  automatic_enable = true,
   ensure_installed = {
     "lua_ls",
     "rust_analyzer",
