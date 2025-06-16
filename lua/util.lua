@@ -1,11 +1,11 @@
 local keymap = vim.keymap.set
 
-function Map(mode, lhs, rhs, opts)
+function Map(mode, keymap_to_set, command_to_run, opts)
   local options = { noremap = true, silent = true }
   if opts then
     options = vim.tbl_extend("force", options, opts)
   end
-  keymap(mode, lhs, rhs, options)
+  keymap(mode, keymap_to_set, command_to_run, options)
 end
 
 function copy_buf_path_to_clipboard()

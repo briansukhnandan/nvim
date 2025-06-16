@@ -13,6 +13,7 @@ require("lualine_conf")
 require("terminal_conf")
 require("mini_conf")
 require("gitsigns_conf")
+require("aerial_conf")
 
 -- These plugins don't require any specific configs
 require('glow').setup()

@@ -36,9 +36,9 @@ require('telescope').setup {
   },
 }
 
-apply_telescope_shortcut("<Space><Space>f", 'find_files')
-apply_telescope_shortcut("<Space><Space>g", 'live_grep')
-apply_telescope_shortcut("<Space><Space>b", 'buffers')
-apply_telescope_shortcut("<Space><Space>j", "jumplist")
-apply_telescope_shortcut("<Space><Space>o", "oldfiles")
-apply_telescope_shortcut("<Space><Space>c", "current_buffer_fuzzy_find")
+apply_telescope_shortcut("<leader><leader>f", 'find_files')
+apply_telescope_shortcut("<leader><leader>g", 'live_grep')
+apply_telescope_shortcut("<leader><leader>b", 'buffers')
+apply_telescope_shortcut("<leader><leader>j", "jumplist")
+apply_telescope_shortcut("<leader><leader>o", "oldfiles")
+apply_telescope_shortcut("<leader><leader>c", "current_buffer_fuzzy_find")

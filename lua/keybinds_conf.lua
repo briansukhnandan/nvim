@@ -26,7 +26,7 @@ Map("n", "d", '"_d', silent)
 -- Remove highlights
 Map("n", "<ESC>", ":noh<CR><CR>", silent)
 
-Map("n", "<Space>F", "1<C-g>")
+Map("n", "<leader>F", "1<C-g>")
 
 -- Scrolling - Personally I think 5 lines down is 
 -- reasonable esp when scrubbing through large files.
@@ -39,7 +39,7 @@ Map("n", "<A-k>", "<C-y> 5<C-y>")
 
 -- Yanks the path of the current buffer and stores
 -- in the system clipboard
-Map("n", "<Space>yp", copy_buf_path_to_clipboard, silent)
+Map("n", "<leader>yp", copy_buf_path_to_clipboard, silent)
 
 -- Tabs (and buffers)
 --
@@ -49,13 +49,13 @@ Map("n", "<Space>yp", copy_buf_path_to_clipboard, silent)
 -- TS + Tab -> New Buffer
 -- TS + , (or h) -> Prev Buffer
 -- TS + . (or l) -> Next Buffer
-Map("n", "<Space><Tab><Tab>", "<cmd>enew<cr>", { desc = "New Buffer" })
-Map("n", "<Space><Tab>c", "<cmd>bd<cr>", { desc = "Close Tab" })
-Map("n", "<Space><Tab>C", "<cmd>bd!<cr>", { desc = "Force Close Tab" })
-Map("n", "<Space><Tab>h", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-Map("n", "<Space><Tab>l", "<cmd>bnext<cr>", { desc = "Next buffer" })
-Map("n", "<Space><Tab>[", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-Map("n", "<Space><Tab>]", "<cmd>bnext<cr>", { desc = "Next buffer" })
+Map("n", "<leader><Tab><Tab>", "<cmd>enew<cr>", { desc = "New Buffer" })
+Map("n", "<leader><Tab>c", "<cmd>bd<cr>", { desc = "Close Tab" })
+Map("n", "<leader><Tab>C", "<cmd>bd!<cr>", { desc = "Force Close Tab" })
+Map("n", "<leader><Tab>h", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+Map("n", "<leader><Tab>l", "<cmd>bnext<cr>", { desc = "Next buffer" })
+Map("n", "<leader><Tab>[", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+Map("n", "<leader><Tab>]", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- Markdown preview (using `glow.nvim`)
 Map("n", "<C-x>G", "<cmd>Glow<cr>", { desc = "Preview Markdown in current buffer" })
@@ -67,7 +67,7 @@ Map("n", "gY", "<cmd>Glance type_definitions<cr>")
 Map("n", "gM", "<cmd>Glance implementations<cr>")
 
 -- Neotree
-Map("n", "<Space>e", "<cmd>Neotree toggle<cr>")
+Map("n", "<leader>e", "<cmd>Neotree toggle<cr>")
 
 -- Mason
 Map("n", "<C-x>m", "<cmd>Mason<cr>")

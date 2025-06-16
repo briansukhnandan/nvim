@@ -33,5 +33,6 @@ Plug 'hrsh7th/cmp-cmdline' " cmp for the cmdline
 Plug 'hrsh7th/nvim-cmp' " cmp itself
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help' " See function signatures as typing
 Plug 'dnlhc/glance.nvim' " See VSCode like LSP info
+Plug 'stevearc/aerial.nvim'
 
 call plug#end()

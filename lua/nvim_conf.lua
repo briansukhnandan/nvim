@@ -1,6 +1,8 @@
 vim.cmd("source $HOME/.config/nvim/plugins.vim")
 vim.cmd("set number relativenumber")
 
+-- I use space for leader
+vim.g.mapleader = ' '
 vim.o.cursorline = false
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

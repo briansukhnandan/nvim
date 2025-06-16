@@ -15,13 +15,13 @@ my config that i use at work everyday 😎
 - You can toggle between light/dark mode with `<C-x>tt`
 
 ### Telescope
-Telescope Superkey - `<leader><space>`
-- Find files: `<leader><Space>f`
-- Live Grep: `<leader><Space>g`
-- View Buffers: `<leader><Space>>b`
-- Jump List: `<leader><Space>j`
-- Recent Files: `<leader><Space>o`
-- Current Buffer Fuzzy Finder: `<leader><Space>c`
+Telescope Superkey - `<leader><leader>`
+- Find files: `<leader><leader>f`
+- Live Grep: `<leader><leader>g`
+- View Buffers: `<leader><leader>>b`
+- Jump List: `<leader><leader>j`
+- Recent Files: `<leader><leader>o`
+- Current Buffer Fuzzy Finder: `<leader><leader>c`
 
 ### ToggleTerm
 Toggle Key - `<C-backtick>`

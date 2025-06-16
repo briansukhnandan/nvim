@@ -15,8 +15,8 @@ local on_attach = function(_, bufnr)
   apply_shortcut('n', "gr", vim.lsp.buf.references, bufopts)
   apply_shortcut('n', "gi", vim.lsp.buf.implementation, bufopts)
   apply_shortcut('n', "K", vim.lsp.buf.hover, bufopts)
-  apply_shortcut('n', "<Space>ca", vim.lsp.buf.code_action, bufopts)
-  apply_shortcut('n', "<Space>cr", vim.lsp.buf.rename, bufopts)
+  apply_shortcut('n', "<leader>ca", vim.lsp.buf.code_action, bufopts)
+  apply_shortcut('n', "<leader>cr", vim.lsp.buf.rename, bufopts)
 
   -- Misc LSP Related shortcuts
   vim.keymap.set(
