@@ -1,7 +1,3 @@
--- Please note - colorscheme is set inside of catppuccin_conf, as 
--- it needs to be set after the config is loaded.
-
--- Plugin configurations
 require("nvim_conf")
 require("keybinds_conf")
 require("dashboard_conf")
@@ -18,9 +14,6 @@ require("terminal_conf")
 require("mini_conf")
 require("gitsigns_conf")
 
--- Out of the box plugins
+-- These plugins don't require any specific configs
 require('glow').setup()
 require("fidget").setup()
-
--- Disabled (for now)
--- require("catppuccin_conf")
