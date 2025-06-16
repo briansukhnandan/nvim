@@ -6,8 +6,7 @@ my config that i use at work everyday 😎
 - Depending on the language you'll be programming in, you'll also need to download the appropriate treesitter config with `:TSInstall`
 
 ### My specific tweaks
-- I personally use the default `<leader>` key - `<space>`.
-- However my config also works well if you prefer your `<leader>` key to be `,`!
+- I personally use the default `<leader>` key - `<space>`, however feel free to change this in `lua/nvim_conf.lua`.
 - This config also integrates well with `Neovide` if that's your cup of tea. To increase/decrease scale use `<C-->` and `<C-=>`. By default scale will be set at `0.75`.
 
 ### Colorscheme
@@ -22,6 +21,10 @@ Telescope Superkey - `<leader><leader>`
 - Jump List: `<leader><leader>j`
 - Recent Files: `<leader><leader>o`
 - Current Buffer Fuzzy Finder: `<leader><leader>c`
+
+### Aerial
+- Open the Aerial Pane (default position is left): `<leader>a`
+- Jumping forwards/backwards in the Aerial pane: `<Up>/<Down>`
 
 ### ToggleTerm
 Toggle Key - `<C-backtick>`
