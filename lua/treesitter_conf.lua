@@ -5,6 +5,12 @@ require'treesitter-context'.setup{
 }
 
 require("nvim-treesitter.configs").setup {
+  ignore_install = {},
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+
   -- You can put "all" to make treesitter install every available parser
   ensure_installed = {
     "c",
@@ -20,12 +26,6 @@ require("nvim-treesitter.configs").setup {
     "git_rebase",
     "gitattributes"
   },
-
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
-
-  -- Automatically install missing parsers when entering buffer
-  auto_install = true,
 
   playground = {
     enabled = true,
