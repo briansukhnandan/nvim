@@ -9,11 +9,15 @@ local on_attach = function(_, bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
+  -- Very common LSP related shortcuts
   apply_shortcut('n', "gd", vim.lsp.buf.definition, bufopts)
   apply_shortcut('n', "gr", vim.lsp.buf.references, bufopts)
   apply_shortcut('n', "gi", vim.lsp.buf.implementation, bufopts)
   apply_shortcut('n', "K", vim.lsp.buf.hover, bufopts)
   apply_shortcut('n', "<Space>cr", vim.lsp.buf.rename, bufopts)
+
+  -- Misc LSP Related shortcuts
   vim.cmd("nnoremap <Space>ca <cmd>lua vim.lsp.buf.code_action()<cr>")
 
   vim.keymap.set(
@@ -53,7 +57,7 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
   ensure_installed = {
-    "lua_ls", 
+    "lua_ls",
     "rust_analyzer",
     "pyright",
     "ts_ls"
@@ -67,6 +71,9 @@ lspconfig.pyright.setup({
 })
 lspconfig.ts_ls.setup({
   on_attach = on_attach,
+  init_options = {
+    maxTsServerMemory = 10000
+  },
   capabilities = capabilities,
 })
 lspconfig.lua_ls.setup({
