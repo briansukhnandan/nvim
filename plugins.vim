@@ -23,8 +23,8 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-vsnip'
-Plug 'williamboman/mason-lspconfig.nvim' " Easy config for Mason and LSP
-Plug 'williamboman/mason.nvim' " Easily manage LSP servers
+Plug 'williamboman/mason-lspconfig.nvim', { 'tag': 'v1.32.0' } " Easy config for Mason and LSP
+Plug 'williamboman/mason.nvim', { 'tag': 'v1.11.0' } " Easily manage LSP servers
 Plug 'neovim/nvim-lspconfig' " lsp
 Plug 'hrsh7th/cmp-nvim-lsp' " LSP cmp
 Plug 'hrsh7th/cmp-buffer' " Current buffer cmp
