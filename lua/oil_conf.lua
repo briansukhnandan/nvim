@@ -1,3 +1,5 @@
+local actions = require("oil.actions")
+
 require("oil").setup({
   default_file_explorer = true,
   delete_to_trash = true,
@@ -17,6 +19,12 @@ require("oil").setup({
         else
           require("oil").set_columns({ "icon" })
         end
+      end,
+    },
+    ['<C-p>'] = {
+      callback = function()
+        -- We use oil.actions to get "toggle" functionality
+        actions.preview.callback({ vertical = true, split = "botright" })
       end,
     },
   },
