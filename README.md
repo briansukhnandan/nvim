@@ -34,8 +34,9 @@ Toggle Key - `<C-backtick>`
 ### Glow
 - Preview Markdown in the current buffer: `<C-x>G`
 
-### Neotree (File Explorer)
-- Toggle: `<leader>e`
+### Oil (File Explorer)
+- Toggle: `\`
+- See file details in Oil buffer: `gd`
 
 ### Git Blame
 - Open commit in Github/GitLab - `<C-x>o`

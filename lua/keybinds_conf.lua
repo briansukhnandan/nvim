@@ -66,8 +66,5 @@ Map("n", "gD", "<cmd>Glance definitions<cr>")
 Map("n", "gY", "<cmd>Glance type_definitions<cr>")
 Map("n", "gM", "<cmd>Glance implementations<cr>")
 
--- Neotree
-Map("n", "<leader>e", "<cmd>Neotree toggle<cr>")
-
 -- Mason
 Map("n", "<C-x>m", "<cmd>Mason<cr>")
