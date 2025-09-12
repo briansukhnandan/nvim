@@ -1,7 +1,6 @@
 call plug#begin('$HOME/.config/nvim/plugged')
 
 Plug 'nvim-tree/nvim-web-devicons' " eye candy
-Plug 'nvim-neo-tree/neo-tree.nvim' " file explorer
 Plug 'stevearc/oil.nvim'
 Plug 'MunifTanjim/nui.nvim' " UI Library
 Plug 'nvimdev/dashboard-nvim' " Startup Dashboard
