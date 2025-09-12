@@ -6,7 +6,6 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Disable indentscope for certain filetypes",
   pattern = {
     "mason",
-    "toggleterm",
     "dashboard",
     "telescope",
   },

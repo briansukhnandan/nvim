@@ -26,11 +26,6 @@ Telescope Superkey - `<leader><leader>`
 - Open the Aerial Pane (default position is left): `<leader>a`
 - Jumping forwards/backwards in the Aerial pane: `<Up>/<Down>`
 
-### ToggleTerm
-Toggle Key - `<C-backtick>`
-- Prefixing the Toggle key with a number will open that Terminal.
-    - For example `2<C-backtick>` opens Terminal 2
-
 ### Glow
 - Preview Markdown in the current buffer: `<C-x>G`
 
@@ -49,6 +44,12 @@ Toggle Key - `<C-backtick>`
 
 ### Mason (LSP)
 - GUI: `<C-x>m`
+
+### Terminals
+- I use the built-in neovim terminal, as it works for my use-cases.
+- You can spawn + switch up to 9 terminals using `<leader>1` -> `<leader>9`.
+- Note that if a terminal buffer is not already created, then using that keybind will
+automatically create a new terminal buffer with that label and switch to it.
 
 ### Other helpful bindings
 - Seeing the path of the current buffer: `<leader>F`

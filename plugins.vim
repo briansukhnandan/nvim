@@ -17,7 +17,6 @@ Plug 'https://github.com/f-person/git-blame.nvim' " Need be said?
 Plug 'https://github.com/j-hui/fidget.nvim' " LSP status on file open
 Plug 'ellisonleao/glow.nvim' " Preview Markdown
 Plug 'justinmk/vim-sneak' " Jump to any point visible with 3 keystrokes
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'} " Better terminal configs
 
 " LSP/cmp
 Plug 'nvim-treesitter/nvim-treesitter' 
