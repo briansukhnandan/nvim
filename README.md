@@ -1,9 +1,10 @@
 # nvim
 my config that i use at work everyday 😎
+Battle-tested for nvim `v0.11.4`
 
 ### How do I use it?
-- This uses `vim-plug` as the plugin manager so execute a `:PlugInstall`, restart nvim and you should be (mostly) good to go!
-- Depending on the language you'll be programming in, you'll also need to download the appropriate treesitter config with `:TSInstall`
+- This uses `lazy.nvim` as the plugin manager, so it should initialize itself automatically automatically on the first launch.
+- By default I have LSP for TS, Python, Lua, and Rust installed, but feel free to expand this list in the `lua/plugins.lua` file under the `nvim-lspconfig` plugin block.
 
 ### My specific tweaks
 - I personally use the default `<leader>` key - `<space>`, however feel free to change this in `lua/nvim_conf.lua`.
@@ -30,7 +31,7 @@ Telescope Superkey - `<leader><leader>`
 - Preview Markdown in the current buffer: `<C-x>G`
 
 ### Oil (File Explorer)
-- Toggle: `\`
+- Toggle: `-`
 - See file details in Oil buffer: `gd`
 
 ### Git Blame

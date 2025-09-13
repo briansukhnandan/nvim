@@ -1,4 +1,3 @@
-vim.cmd("source $HOME/.config/nvim/plugins.vim")
 vim.cmd("set number relativenumber")
 
 -- I use space for leader
