@@ -51,6 +51,10 @@ Telescope Superkey - `<leader><leader>`
 - Note that if a terminal buffer is not already created, then using that keybind will
 automatically create a new terminal buffer with that label and switch to it.
 
+### Window Management
+- To me, `<C-w>` is a bit awkward for window keybinds, so I remapped that to `,`.
+- `,`+`HJKL` will also resize buffers, where `J`/`K` are for splits and `H`/`L` are for vsplits.
+
 ### Other helpful bindings
 - Seeing the path of the current buffer: `<leader>F`
 - Scrolling up/down: `<A-j>/<A-k>`
