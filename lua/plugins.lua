@@ -363,6 +363,46 @@ require("lazy").setup({
     end,
   },
 
+  -- Database
+  {
+    "tpope/vim-dadbod",
+    config = function()
+      -- Pull database URLs from environment variables
+      local prod_db = os.getenv("PROD_DB_URL") or ""
+      local dev_db  = os.getenv("DEV_DB_URL") or ""
+
+      vim.g.dadbod_profiles = {
+        prod = prod_db,
+        dev  = dev_db,
+      }
+      vim.g.dadbod_default_profile = "dev"
+    end,
+  },
+  {
+    "kristijanhusak/vim-dadbod-ui",
+    dependencies = { "tpope/vim-dadbod" },
+    config = function()
+      vim.g.dadbod_ui_save_location = "~/.config/nvim/dadbod_ui_save.sql"
+
+      local opts = { noremap = true, silent = true }
+      vim.api.nvim_set_keymap("n", "<C-d>o", "<cmd>DBUI<CR>", opts)
+      vim.api.nvim_set_keymap("n", "<C-d>r", "<cmd>DBUIReconnect<CR>", opts)
+      vim.api.nvim_set_keymap("n", "<C-d>p", "", {
+        noremap = true,
+        silent = true,
+        callback = function()
+          local profiles = vim.tbl_keys(vim.g.dadbod_profiles or {})
+          vim.ui.select(profiles, { prompt = "Select DB profile:" }, function(choice)
+            if choice then
+              vim.g.dadbod_default_profile = choice
+              print("Switched default profile to:", choice)
+            end
+          end)
+        end,
+      })
+    end,
+  },
+
   -- LSP / Completion
   { "dnlhc/glance.nvim" },
   {
