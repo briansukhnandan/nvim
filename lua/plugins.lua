@@ -486,14 +486,11 @@ require("lazy").setup({
           local inside_log = vim.bo.filetype == "log"
 
           local buftype = vim.api.nvim_buf_get_option(0, "buftype")
-          local filetype = vim.bo.filetype
           local is_prompt = buftype == "prompt"
-          local is_neotree = filetype == "neo-tree-popup" or filetype == "neo-tree"
 
           return not inside_comment
             and not inside_log
             and not is_prompt
-            and not is_neotree
         end,
         mapping = {
           ["<Up>"] = cmp.mapping.select_prev_item(),
