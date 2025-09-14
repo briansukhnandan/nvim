@@ -1,5 +1,5 @@
 # nvim
-my config that i use at work everyday 😎
+My config that i use at work everyday 😎<br>
 Battle-tested for nvim `v0.11.4`
 
 ### How do I use it?
