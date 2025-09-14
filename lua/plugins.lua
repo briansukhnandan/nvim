@@ -339,6 +339,12 @@ require("lazy").setup({
       vim.o.tabline = "%!v:lua._G.custom_tabline()"
     end
   },
+  {
+    "samjwill/nvim-unception",
+    init = function()
+        vim.g.unception_open_buffer_in_new_tab = true
+    end
+  },
 
   -- Git
   {
