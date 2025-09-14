@@ -265,6 +265,7 @@ require("lazy").setup({
       require("mini.pairs").setup()
       require("mini.comment").setup()
       require("mini.indentscope").setup()
+      require("mini.tabline").setup()
 
       -- Disable indentscope for certain filetypes
       vim.api.nvim_create_autocmd("FileType", {
