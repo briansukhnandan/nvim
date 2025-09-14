@@ -266,23 +266,6 @@ require("lazy").setup({
       require("mini.comment").setup()
       require("mini.indentscope").setup()
 
-      local colors = { "🔴", "🟠", "🟡", "🟢", "🔵", "🟣" }
-      local buffer_to_emoji_map = {}
-      math.randomseed(os.time())
-      require("mini.tabline").setup({
-        tabpage_section = "left",
-        format = function(bufnr, label)
-          label = (label and label ~= "") and label or "[No Name]"
-
-          -- assign a random emoji to this buffer if not already assigned
-          if not buffer_to_emoji_map[bufnr] then
-            buffer_to_emoji_map[bufnr] = colors[math.random(#colors)]
-          end
-
-          return " " .. buffer_to_emoji_map[bufnr] .. " " .. label
-        end,
-      })
-
       -- Disable indentscope for certain filetypes
       vim.api.nvim_create_autocmd("FileType", {
         desc = "Disable indentscope for certain filetypes",
@@ -312,6 +295,48 @@ require("lazy").setup({
     "ellisonleao/glow.nvim",
     config = function ()
       require("glow").setup()
+    end
+  },
+  {
+    "crispgm/nvim-tabline",
+    config = function()
+      local colors = { "🔴", "🟠", "🟡", "🟢", "🔵", "🟣" }
+      local buffer_to_emoji_map = {}
+      local next_emoji_index = 1
+      math.randomseed(os.time())
+
+      local function custom_tabline()
+        local s = ""
+        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+          if vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_buf_get_option(buf, "buftype") == "" then
+            local name = vim.api.nvim_buf_get_name(buf)
+            name = name ~= "" and vim.fn.fnamemodify(name, ":t") or "[No Name]"
+
+            -- assign the next sequential emoji if not already assigned
+            if not buffer_to_emoji_map[buf] then
+              buffer_to_emoji_map[buf] = colors[next_emoji_index]
+              next_emoji_index = next_emoji_index % #colors + 1  -- wrap around
+            end
+
+            local emoji = buffer_to_emoji_map[buf]
+            local is_active = buf == vim.api.nvim_get_current_buf()
+
+            if is_active then
+              s = s .. "%#TabLineSel#" .. " " .. emoji .. " " .. name .. " %#TabLine#"
+            else
+              s = s .. " " .. emoji .. " " .. name .. " "
+            end
+          end
+        end
+        return s
+      end
+
+      -- Store it globally so Neovim can call it
+      _G.custom_tabline = custom_tabline
+
+      -- Activate the tabline
+      vim.o.showtabline = 2
+      vim.o.tabline = "%!v:lua._G.custom_tabline()"
     end
   },
 
