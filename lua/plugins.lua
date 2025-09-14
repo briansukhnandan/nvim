@@ -267,6 +267,24 @@ require("lazy").setup({
       require("mini.indentscope").setup()
       require("mini.tabline").setup()
 
+      local colors = { "🔴", "🟠", "🟡", "🟢", "🔵", "🟣" }
+      local buffer_to_emoji_map = {}
+      math.randomseed(os.time())
+
+      require("mini.tabline").setup({
+        tabpage_section = "left",
+        format = function(bufnr, label)
+          label = (label and label ~= "") and label or "[No Name]"
+
+          -- assign a random emoji to this buffer if not already assigned
+          if not buffer_to_emoji_map[bufnr] then
+            buffer_to_emoji_map[bufnr] = colors[math.random(#colors)]
+          end
+
+          return " " .. buffer_to_emoji_map[bufnr] .. " " .. label
+        end,
+      })
+
       -- Disable indentscope for certain filetypes
       vim.api.nvim_create_autocmd("FileType", {
         desc = "Disable indentscope for certain filetypes",
