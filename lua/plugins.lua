@@ -265,7 +265,6 @@ require("lazy").setup({
       require("mini.pairs").setup()
       require("mini.comment").setup()
       require("mini.indentscope").setup()
-      require("mini.tabline").setup()
 
       local colors = { "🔴", "🟠", "🟡", "🟢", "🔵", "🟣" }
       local buffer_to_emoji_map = {}
