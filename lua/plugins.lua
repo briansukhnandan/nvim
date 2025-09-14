@@ -270,7 +270,6 @@ require("lazy").setup({
       local colors = { "🔴", "🟠", "🟡", "🟢", "🔵", "🟣" }
       local buffer_to_emoji_map = {}
       math.randomseed(os.time())
-
       require("mini.tabline").setup({
         tabpage_section = "left",
         format = function(bufnr, label)
