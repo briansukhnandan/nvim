@@ -47,7 +47,7 @@ Telescope Superkey - `<leader><leader>`
 - GUI: `<C-x>m`
 
 ### mini.nvim
-- Minimap
+- Minimap (Commands prefixed by `<C-m>`)
   - Open: `<C-m>o`
   - Close: `<C-m>c`
   - Toggle: `<C-m>t`
