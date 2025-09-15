@@ -345,6 +345,83 @@ require("lazy").setup({
         vim.g.unception_open_buffer_in_new_tab = true
     end
   },
+  {
+    "stevearc/conform.nvim",
+    event = "VeryLazy",
+    config = function()
+      local conform = require("conform")
+
+      -- Check if a .prettierrc (or equiv) exists in the project root
+      local function has_prettierrc(bufnr)
+        local root = conform.get_project_root(bufnr) or vim.fn.getcwd()
+        local files = {
+          ".prettierrc",
+          ".prettierrc.json",
+          ".prettierrc.js",
+          ".prettierrc.cjs",
+          ".prettierrc.yaml",
+          ".prettierrc.yml",
+          "prettier.config.js",
+          "prettier.config.cjs",
+        }
+        for _, f in ipairs(files) do
+          if vim.loop.fs_stat(root .. "/" .. f) then
+            return true
+          end
+        end
+        return false
+      end
+
+      conform.setup({
+        formatters_by_ft = {
+          javascript = { "prettier_if_config" },
+          typescript = { "prettier_if_config" },
+          javascriptreact = { "prettier_if_config" },
+          typescriptreact = { "prettier_if_config" },
+          json = { "prettier_if_config" },
+          css = { "prettier_if_config" },
+          html = { "prettier_if_config" },
+          yaml = { "prettier_if_config" },
+          markdown = { "prettier_if_config" },
+        },
+        -- No format on save
+        format_on_save = false,
+      })
+
+      -- Custom Prettier wrapper `prettier_if_config`: only runs if a config exists
+      conform.formatters.prettier_if_config = {
+        command = "prettier",
+        args = { "--stdin-filepath", "$FILENAME" },
+        condition = function(ctx)
+          if has_prettierrc(ctx.buf) then
+            return true
+          else
+            vim.notify(
+              "No .prettierrc found in project root. Skipping Prettier for "
+                .. vim.api.nvim_buf_get_name(ctx.buf),
+              vim.log.levels.WARN
+            )
+            return false
+          end
+        end,
+      }
+
+      -- Format all listed buffers with `:Pfa`
+      vim.api.nvim_create_user_command("Pfa", function()
+        for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+          if vim.api.nvim_buf_is_loaded(bufnr) and vim.api.nvim_buf_get_option(bufnr, "modifiable") then
+            conform.format({ bufnr = bufnr, async = true })
+          end
+        end
+        vim.notify("Prettify-all triggered for all open buffers", vim.log.levels.INFO)
+      end, { desc = "Prettify all open buffers with Prettier" })
+
+      -- Only format current buffer
+      vim.keymap.set("n", "<leader>pf", function()
+        conform.format({ async = true })
+      end, { desc = "Format current buffer" })
+    end,
+  },
 
   -- Git
   {
