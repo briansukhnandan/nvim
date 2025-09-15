@@ -32,7 +32,8 @@ Telescope Superkey - `<leader><leader>`
 - Preview Markdown in the current buffer: `<C-x>G`
 
 ### Oil (File Explorer)
-- Toggle: `-`
+- Toggle/Go up a directory: `-`
+- Go into a directory/file: `=`
 - See file details in Oil buffer: `gd`
 
 ### Git Blame

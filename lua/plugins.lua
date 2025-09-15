@@ -24,6 +24,8 @@ require("lazy").setup({
     },
     config = function ()
       local actions = require("oil.actions")
+      local detail = false
+
       require("oil").setup({
         default_file_explorer = true,
         delete_to_trash = true,
@@ -34,6 +36,7 @@ require("lazy").setup({
           return name == '..' or name == '.git'
         end,
         keymaps = {
+          ["="] = actions.select.callback,
           ["gd"] = {
             desc = "Toggle file detail view",
             callback = function()
