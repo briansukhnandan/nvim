@@ -46,6 +46,13 @@ Telescope Superkey - `<leader><leader>`
 ### Mason (LSP)
 - GUI: `<C-x>m`
 
+### Code Formatting
+- I use `conform.nvim` for my code-formatting needs.
+- If ypu launch `neovim` from your project's root and have a prettier config file, this config should automatically acknowledge it.
+- At work, I use `prettier`, so I have 2 keybinds that I personally use:
+  - `<leader>pf` - Format only the current buffer
+  - `:Pfa` - Format all open buffers
+
 ### Terminals
 - I use the built-in neovim terminal, as it works for my use-cases.
 - You can spawn + switch up to 9 terminals using `<leader>1` -> `<leader>9`.
