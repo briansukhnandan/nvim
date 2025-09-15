@@ -350,10 +350,29 @@ require("lazy").setup({
     event = "VeryLazy",
     config = function()
       local conform = require("conform")
+      local util = require("lspconfig.util")
+
+      -- Project root detector
+      local function get_project_root(bufnr)
+        bufnr = bufnr or vim.api.nvim_get_current_buf()
+        local filename = vim.api.nvim_buf_get_name(bufnr)
+        return util.root_pattern(
+          ".git",
+          "package.json",
+          ".prettierrc",
+          ".prettierrc.json",
+          ".prettierrc.js",
+          ".prettierrc.cjs",
+          ".prettierrc.yaml",
+          ".prettierrc.yml",
+          "prettier.config.js",
+          "prettier.config.cjs"
+        )(filename) or vim.fn.getcwd()
+      end
 
       -- Check if a .prettierrc (or equiv) exists in the project root
       local function has_prettierrc(bufnr)
-        local root = conform.get_project_root(bufnr) or vim.fn.getcwd()
+        local root = get_project_root(bufnr)
         local files = {
           ".prettierrc",
           ".prettierrc.json",
