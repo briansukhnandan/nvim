@@ -432,8 +432,8 @@ require("lazy").setup({
             conform.format({ bufnr = bufnr, async = true })
           end
         end
-        vim.notify("Prettify-all triggered for all open buffers", vim.log.levels.INFO)
-      end, { desc = "Prettify all open buffers with Prettier" })
+        vim.notify("prettier triggered for all open buffers", vim.log.levels.INFO)
+      end, { desc = "prettier triggered for all open buffers" })
 
       -- Only format current buffer
       vim.keymap.set("n", "<leader>pf", function()
