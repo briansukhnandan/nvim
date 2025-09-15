@@ -46,6 +46,13 @@ Telescope Superkey - `<leader><leader>`
 ### Mason (LSP)
 - GUI: `<C-x>m`
 
+### mini.nvim
+- Minimap
+  - Open: `<C-m>o`
+  - Close: `<C-m>c`
+  - Toggle: `<C-m>t`
+  - Refresh: `<C-m>r`
+
 ### Code Formatting
 - I use `conform.nvim` for my code-formatting needs.
 - If ypu launch `neovim` from your project's root and have a prettier config file, this config should automatically acknowledge it.

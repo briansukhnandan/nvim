@@ -190,23 +190,6 @@ require("lazy").setup({
       })
     end,
   },
-  {
-    "petertriho/nvim-scrollbar",
-    lazy = false,
-    config = function ()
-      require("scrollbar").setup({
-        handle = {
-          blend = 75,
-          color = "#acafaf",
-        },
-        marks = {
-          Cursor = {
-            text = "ಠ_ಠ",
-          },
-        },
-      })
-    end
-  },
 
   -- Utilities
   { "nvim-lua/plenary.nvim" },
@@ -265,6 +248,34 @@ require("lazy").setup({
       require("mini.pairs").setup()
       require("mini.comment").setup()
       require("mini.indentscope").setup()
+
+      local minimap = require("mini.map")
+      minimap.setup({
+        integrations = nil,
+        symbols = {
+          encode = minimap.gen_encode_symbols.dot("4x2"),
+        },
+        window = {
+          width = 4,
+          show_integration_count = false,
+        },
+      })
+
+      vim.keymap.set("n", "<C-m>o", minimap.open,   { desc = "Open minimap" })
+      vim.keymap.set("n", "<C-m>c", minimap.close,  { desc = "Close minimap" })
+      vim.keymap.set("n", "<C-m>t", minimap.toggle, { desc = "Toggle minimap" })
+      vim.keymap.set("n", "<C-m>f", minimap.toggle_focus, { desc = "Toggle minimap focus" })
+      vim.keymap.set("n", "<C-m>r", minimap.refresh, { desc = "Refresh minimap" })
+
+      vim.api.nvim_create_autocmd("BufEnter", {
+        callback = function(args)
+          local ft = vim.bo[args.buf].filetype
+          local ignore = { "lazy", "help" }
+          if not vim.tbl_contains(ignore, ft) then
+            MiniMap.open()
+          end
+        end,
+      })
 
       -- Disable indentscope for certain filetypes
       vim.api.nvim_create_autocmd("FileType", {
