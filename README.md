@@ -19,6 +19,7 @@ Telescope Superkey - `<leader><leader>`
 - Find files: `<leader><leader>f`
 - Live Grep: `<leader><leader>g`
 - View Buffers: `<leader><leader>>b`
+- View Marks: `<leader><leader>>m`
 - Jump List: `<leader><leader>j`
 - Recent Files: `<leader><leader>o`
 - Current Buffer Fuzzy Finder: `<leader><leader>c`

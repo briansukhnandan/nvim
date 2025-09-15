@@ -203,6 +203,7 @@ require("lazy").setup({
       { "<leader><leader>b", "<cmd>Telescope buffers<CR>", desc = "Telescope Buffers" },
       { "<leader><leader>j", "<cmd>Telescope jumplist<CR>", desc = "Telescope Jumplist" },
       { "<leader><leader>o", "<cmd>Telescope oldfiles<CR>", desc = "Telescope Oldfiles" },
+      { "<leader><leader>m", "<cmd>Telescope marks<CR>", desc = "Telescope Marks" },
       { "<leader><leader>c", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Telescope Current Buffer" },
     },
     config = function()
