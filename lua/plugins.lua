@@ -47,7 +47,7 @@ require("lazy").setup({
           },
           ['<C-p>'] = {
             callback = function()
-              -- We use oil.actions to get "toggle" functionality
+              -- Toggle file preview
               actions.preview.callback({ vertical = true, split = "botright" })
             end,
           },
