@@ -199,6 +199,7 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
     cmd = { "Telescope" },
     keys = {
       { "<leader><leader>f", "<cmd>Telescope find_files<CR>", desc = "Telescope Find Files" },
