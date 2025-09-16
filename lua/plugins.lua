@@ -237,6 +237,7 @@ require("lazy").setup({
   },
   {
     "lewis6991/gitsigns.nvim",
+    lazy = false,
     keys = {
       { "<C-x>o", "<cmd>GitBlameOpenCommitURL<cr>", desc = "Open commit in GitLab/GitHub" },
     },
