@@ -458,6 +458,11 @@ require("lazy").setup({
       end, { desc = "Format current buffer" })
     end,
   },
+  {
+    "yutkat/confirm-quit.nvim",
+    event = "CmdlineEnter",
+    opts = {},
+  },
 
   -- Git
   {
