@@ -199,6 +199,8 @@ require("lazy").setup({
     config = function()
       require("colorizer").setup({
         "*", -- highlight all filetypes
+        "!TelescopePrompt", -- exclude Telescope prompt
+        "!TelescopeResults", -- exclude Telescope results
         css = { css = true },
         html = { names = true },
       }, {
