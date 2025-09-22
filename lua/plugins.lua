@@ -193,6 +193,30 @@ require("lazy").setup({
       })
     end,
   },
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = "BufReadPre",
+    config = function()
+      require("colorizer").setup({
+        "*", -- highlight all filetypes
+        css = { css = true },
+        html = { names = true },
+      }, {
+        mode = "background",
+        RRGGBBAA = true,
+        rgb_fn = true,
+        hsl_fn = true,
+        names = false,
+      })
+
+      -- Keybinding to toggle colorizer globally
+      vim.keymap.set("n", "<C-c>ct", "<cmd>ColorizerToggle<CR>", {
+        noremap = true,
+        silent = true,
+        desc = "Toggle colorizer",
+      })
+    end,
+  },
 
   -- Utilities
   {

@@ -81,3 +81,4 @@ automatically create a new terminal buffer with that label and switch to it.
 - Opening the GitLab/GitHub commit under the cursor: `<C-x>o`
 - Copy the current buffer's path to the system clipboard: `<leader>yp`
 - Close all buffers and return to Dashboard: `<C-x>r`
+- Toggle nvim-colorizer: `<C-c>ct`
