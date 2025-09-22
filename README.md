@@ -37,7 +37,10 @@ Telescope Superkey - `<leader><leader>`
 - See file details in Oil buffer: `gd`
 
 ### Git Blame
-- Open commit in Github/GitLab - `<C-x>o`
+- Open commit in Github/GitLab - `<C-g>o`
+- Copy current line's commit SHA - `<C-g>s`
+- Copy current line's commit URL - `<C-g>u`
+- Open current file in browser - `<C-g>f`
 
 ### Fugitive 
 - Launch Fugitive in a buffer: `<C-x>g`

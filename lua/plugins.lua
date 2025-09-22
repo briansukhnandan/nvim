@@ -239,9 +239,6 @@ require("lazy").setup({
   {
     "lewis6991/gitsigns.nvim",
     lazy = false,
-    keys = {
-      { "<C-x>o", "<cmd>GitBlameOpenCommitURL<cr>", desc = "Open commit in GitLab/GitHub" },
-    },
     config = function ()
       require('gitsigns').setup()
     end
@@ -297,7 +294,16 @@ require("lazy").setup({
       })
     end,
   },
-  { "f-person/git-blame.nvim" },
+  {
+    "f-person/git-blame.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<C-g>o", "<cmd>GitBlameOpenCommitURL<cr>", desc = "Open commit in GitLab/GitHub" },
+      { "<C-g>s", "<cmd>GitBlameCopySHA<cr>", desc = "Copy SHA hash of current line's commit" },
+      { "<C-g>u", "<cmd>GitBlameCopyCommitURL<cr>", desc = "Copy URL of current line's commit" },
+      { "<C-g>f", "<cmd>GitBlameOpenFileURL<cr>", desc = "Open current file in browser" },
+    },
+  },
   {
     "justinmk/vim-sneak",
     lazy = false
