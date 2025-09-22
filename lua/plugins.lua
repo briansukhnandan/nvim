@@ -339,6 +339,9 @@ require("lazy").setup({
   },
   {
     "ellisonleao/glow.nvim",
+    keys = {
+      { "<C-x>G", "<cmd>Glow<cr>", desc = "Preview Markdown in current buffer" },
+    },
     config = function ()
       require("glow").setup()
     end
@@ -527,7 +530,16 @@ require("lazy").setup({
   },
 
   -- LSP / Completion
-  { "dnlhc/glance.nvim" },
+  {
+    "dnlhc/glance.nvim",
+    event = "LspAttach",
+    keys = {
+      { "gR", "<cmd>Glance references<cr>", desc = "Glance at references" },
+      { "gD", "<cmd>Glance definitions<cr>", desc = "Glance at definition" },
+      { "gY", "<cmd>Glance type_definitions<cr>", desc = "Glance at type definition" },
+      { "gM", "<cmd>Glance implementations<cr>", desc = "Glance at implementation" },
+    }
+  },
   {
     "stevearc/aerial.nvim",
     -- Load when the toggle command is called or on buffer read
@@ -574,6 +586,11 @@ require("lazy").setup({
       { "williamboman/mason-lspconfig.nvim", tag = "v1.32.0" },
     },
     config = function()
+      local global_opts = { noremap = true, silent = true }
+
+      -- Command for launching Mason
+      vim.keymap.set("n", "<C-x>m", "<cmd>Mason<cr>", global_opts)
+
       -- Global diagnostic shortcuts
       local global_opts = { noremap = true, silent = true }
       vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, global_opts)

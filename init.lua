@@ -1,5 +1,2 @@
 require("plugins")
-require("nvim_conf")
-require("keybinds_conf")
-require("terminal_conf")
-require("window_management_conf")
+require("nvim_config")
