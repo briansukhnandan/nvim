@@ -81,11 +81,20 @@ Map("n", "gM", "<cmd>Glance implementations<cr>")
 -- Mason
 Map("n", "<C-x>m", "<cmd>Mason<cr>")
 
--- <C-x>r closes all buffers and returns to dashboard
+-- <C-x>r closes all non-terminal buffers and returns to dashboard
 vim.keymap.set("n", "<C-x>r", function()
-  -- Close all buffers
-  vim.cmd("bufdo bwipeout")
-  -- Some setups use :Dashboard, others use :DashboardNew
-  -- Adjust if dashboard.nvim changes the default
+  -- Get list of all listed buffers
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) then
+      local bt = vim.api.nvim_buf_get_option(buf, "buftype")
+      if bt == "" then
+        -- normal buffer → wipe it
+        vim.api.nvim_buf_delete(buf, { force = true })
+      end
+    end
+  end
+
+  -- Re-open dashboard
+  -- Change to `DashboardNew` if dashboard.nvim changes it
   vim.cmd("Dashboard")
 end, { noremap = true, silent = true, desc = "Reset Neovim to default state" })
