@@ -463,6 +463,22 @@ require("lazy").setup({
     event = "CmdlineEnter",
     opts = {},
   },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- Leave empty for default config
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+  },
 
   -- Git
   {
