@@ -263,11 +263,11 @@ require("lazy").setup({
         },
       })
 
-      vim.keymap.set("n", "<C-m>o", minimap.open,   { desc = "Open minimap" })
-      vim.keymap.set("n", "<C-m>c", minimap.close,  { desc = "Close minimap" })
-      vim.keymap.set("n", "<C-m>t", minimap.toggle, { desc = "Toggle minimap" })
-      vim.keymap.set("n", "<C-m>f", minimap.toggle_focus, { desc = "Toggle minimap focus" })
-      vim.keymap.set("n", "<C-m>r", minimap.refresh, { desc = "Refresh minimap" })
+      vim.keymap.set("n", "<C-m>mo", minimap.open,   { desc = "Open minimap" })
+      vim.keymap.set("n", "<C-m>mc", minimap.close,  { desc = "Close minimap" })
+      vim.keymap.set("n", "<C-m>mt", minimap.toggle, { desc = "Toggle minimap" })
+      vim.keymap.set("n", "<C-m>mf", minimap.toggle_focus, { desc = "Toggle minimap focus" })
+      vim.keymap.set("n", "<C-m>mr", minimap.refresh, { desc = "Refresh minimap" })
 
       vim.api.nvim_create_autocmd("BufEnter", {
         callback = function(args)

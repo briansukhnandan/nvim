@@ -53,10 +53,10 @@ Telescope Superkey - `<leader><leader>`
 
 ### mini.nvim
 - Minimap (Commands prefixed by `<C-m>`)
-  - Open: `<C-m>o`
-  - Close: `<C-m>c`
-  - Toggle: `<C-m>t`
-  - Refresh: `<C-m>r`
+  - Open: `<C-m>mo`
+  - Close: `<C-m>mc`
+  - Toggle: `<C-m>mt`
+  - Refresh: `<C-m>mr`
 
 ### Code Formatting
 - I use `conform.nvim` for my code-formatting needs.
