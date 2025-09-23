@@ -360,7 +360,8 @@ require("lazy").setup({
   {
     "ellisonleao/glow.nvim",
     keys = {
-      { "<C-x>G", "<cmd>Glow<cr>", desc = "Preview Markdown in current buffer" },
+      { "<C-x>Go", "<cmd>Glow<cr>", desc = "Preview Markdown in current buffer" },
+      { "<C-x>Gr", "<cmd>Glow ~/.config/nvim/README.md<cr>", desc = "Open nvim README in Glow" },
     },
     config = function ()
       require("glow").setup()

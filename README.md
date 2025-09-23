@@ -29,7 +29,8 @@ Telescope Superkey - `<leader><leader>`
 - Jumping forwards/backwards in the Aerial pane: `<Up>/<Down>`
 
 ### Glow
-- Preview Markdown in the current buffer: `<C-x>G`
+- Preview Markdown in the current buffer: `<C-x>Go`
+- Preview this repo's `README.md` in Glow: `<C-x>Gr`
 
 ### Oil (File Explorer)
 - Toggle/Go up a directory: `-`
