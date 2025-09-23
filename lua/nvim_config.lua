@@ -74,10 +74,6 @@ vim.keymap.set("n", "<leader>F", "1<C-g>")
 
 -- Scrolling - Personally I think 5 lines down is 
 -- reasonable esp when scrubbing through large files.
--- 
--- I find it comfortable to use W and S for associativity 
--- with moving up/down since I play games, so I use alt + w/s 
--- for scrolling 5.
 vim.keymap.set("n", "<A-j>", "<C-e> 5<C-e>")
 vim.keymap.set("n", "<A-k>", "<C-y> 5<C-y>")
 
