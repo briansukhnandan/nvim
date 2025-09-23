@@ -66,7 +66,7 @@ Telescope Superkey - `<leader><leader>`
 
 ### Code Formatting
 - I use `conform.nvim` for my code-formatting needs.
-- If ypu launch `neovim` from your project's root and have a prettier config file, this config should automatically acknowledge it.
+- If you launch `neovim` from your project's root and have a prettier config file, this config should automatically acknowledge it.
 - At work, I use `prettier`, so I have 2 keybinds that I personally use:
   - `<leader>pf` - Format only the current buffer
   - `:Pfa` - Format all open buffers
