@@ -295,34 +295,6 @@ require("lazy").setup({
       require("mini.comment").setup()
       require("mini.indentscope").setup()
 
-      local minimap = require("mini.map")
-      minimap.setup({
-        integrations = nil,
-        symbols = {
-          encode = minimap.gen_encode_symbols.dot("4x2"),
-        },
-        window = {
-          width = 4,
-          show_integration_count = false,
-        },
-      })
-
-      vim.keymap.set("n", "<C-m>mo", minimap.open,   { desc = "Open minimap" })
-      vim.keymap.set("n", "<C-m>mc", minimap.close,  { desc = "Close minimap" })
-      vim.keymap.set("n", "<C-m>mt", minimap.toggle, { desc = "Toggle minimap" })
-      vim.keymap.set("n", "<C-m>mf", minimap.toggle_focus, { desc = "Toggle minimap focus" })
-      vim.keymap.set("n", "<C-m>mr", minimap.refresh, { desc = "Refresh minimap" })
-
-      vim.api.nvim_create_autocmd("BufEnter", {
-        callback = function(args)
-          local ft = vim.bo[args.buf].filetype
-          local ignore = { "lazy", "help" }
-          if not vim.tbl_contains(ignore, ft) then
-            MiniMap.open()
-          end
-        end,
-      })
-
       -- Disable indentscope for certain filetypes
       vim.api.nvim_create_autocmd("FileType", {
         desc = "Disable indentscope for certain filetypes",
@@ -334,6 +306,17 @@ require("lazy").setup({
         callback = function()
           vim.b.miniindentscope_disable = true
         end,
+      })
+    end,
+  },
+  {
+    "dstein64/nvim-scrollview",
+    lazy = false,
+    config = function()
+      require("scrollview").setup({
+        current_only = true,
+        winblend = 75,
+        column = 1,
       })
     end,
   },
