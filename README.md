@@ -59,12 +59,6 @@ Telescope Superkey - `<leader><leader>`
   - Toggle: `<C-m>mt`
   - Refresh: `<C-m>mr`
 
-### kulala.nvim (HTTP client)
-- Global keymap prefix: `<C-k>`
-  - Run a snippet: `<C-k>r`
-  - Run all snippets: `<C-k>a`
-  - Open scratchpad: `<C-k>b`
-
 ### Code Formatting
 - I use `conform.nvim` for my code-formatting needs.
 - If you launch `neovim` from your project's root and have a prettier config file, this config should automatically acknowledge it.

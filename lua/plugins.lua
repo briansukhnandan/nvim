@@ -219,24 +219,6 @@ require("lazy").setup({
       })
     end,
   },
-  {
-    "mistweaverco/kulala.nvim",
-    event = "VeryLazy",
-    ft = { "http" },
-    opts = {
-      global_keymaps = true,
-      global_keymaps_prefix = "<C-k>",
-    },
-    config = function(_, opts)
-      require("kulala").setup(opts)
-      local map = vim.keymap.set
-      local o = { noremap = true, silent = true }
-
-      map("n", "<C-k>r", "<cmd>lua require('kulala').run()<cr>", o)
-      map("n", "<C-k>a", "<cmd>lua require('kulala').run_all()<cr>", o)
-      map("n", "<C-k>b", "<cmd>lua require('kulala').scratchpad()<cr>", o)
-    end,
-  },
 
   -- Utilities
   {
