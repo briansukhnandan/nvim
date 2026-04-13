@@ -385,13 +385,11 @@ require("lazy").setup({
     event = "VeryLazy",
     config = function()
       local conform = require("conform")
-      local util = require("lspconfig.util")
 
       -- Project root detector
       local function get_project_root(bufnr)
         bufnr = bufnr or vim.api.nvim_get_current_buf()
-        local filename = vim.api.nvim_buf_get_name(bufnr)
-        return util.root_pattern(
+        return vim.fs.root(bufnr, {
           ".git",
           "package.json",
           ".prettierrc",
@@ -401,8 +399,8 @@ require("lazy").setup({
           ".prettierrc.yaml",
           ".prettierrc.yml",
           "prettier.config.js",
-          "prettier.config.cjs"
-        )(filename) or vim.fn.getcwd()
+          "prettier.config.cjs",
+        }) or vim.fn.getcwd()
       end
 
       -- Check if a .prettierrc (or equiv) exists in the project root
@@ -568,8 +566,9 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      { "williamboman/mason.nvim", tag = "v1.11.0" },
-      { "williamboman/mason-lspconfig.nvim", tag = "v1.32.0" },
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "saghen/blink.cmp",
     },
     config = function()
       local global_opts = { noremap = true, silent = true }
@@ -578,36 +577,46 @@ require("lazy").setup({
       vim.keymap.set("n", "<C-x>m", "<cmd>Mason<cr>", global_opts)
 
       -- Global diagnostic shortcuts
-      local global_opts = { noremap = true, silent = true }
       vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, global_opts)
       vim.keymap.set("n", "]d", vim.diagnostic.goto_next, global_opts)
 
-      -- LSP on_attach function
-      local on_attach = function(_, bufnr)
-        local bufopts = { noremap = true, silent = true, buffer = bufnr }
+      -- LSP keymaps via LspAttach autocmd (replaces on_attach)
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local bufnr = args.buf
+          local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-        local mappings = {
-          gd = vim.lsp.buf.definition,
-          gr = vim.lsp.buf.references,
-          gi = vim.lsp.buf.implementation,
-          K  = vim.lsp.buf.hover,
+          local mappings = {
+            gd = vim.lsp.buf.definition,
+            gr = vim.lsp.buf.references,
+            gi = vim.lsp.buf.implementation,
+            K  = vim.lsp.buf.hover,
 
-          ["<leader>ca"] = vim.lsp.buf.code_action,
-          ["<leader>cr"] = vim.lsp.buf.rename,
+            ["<leader>ca"] = vim.lsp.buf.code_action,
+            ["<leader>cr"] = vim.lsp.buf.rename,
 
-          ["[w]"] = function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN }) end,
-          ["]w"] = function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN }) end,
+            ["[w]"] = function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN }) end,
+            ["]w"] = function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN }) end,
 
-          ["[e]"] = function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end,
-          ["]e"] = function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end,
-        }
+            ["[e]"] = function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end,
+            ["]e"] = function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end,
+          }
 
-        for key, fn in pairs(mappings) do
-          vim.keymap.set("n", key, fn, bufopts)
-        end
-      end
+          for key, fn in pairs(mappings) do
+            vim.keymap.set("n", key, fn, bufopts)
+          end
+        end,
+      })
 
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      -- Global capabilities for all servers
+      vim.lsp.config("*", {
+        capabilities = require("blink.cmp").get_lsp_capabilities(),
+      })
+
+      -- Per-server overrides
+      vim.lsp.config("ts_ls", {
+        init_options = { maxTsServerMemory = 10000 },
+      })
 
       -- Mason setup
       require("mason").setup({
@@ -618,89 +627,47 @@ require("lazy").setup({
         ensure_installed = { "lua_ls", "rust_analyzer", "pyright", "ts_ls" },
       })
 
-      local lspconfig = require("lspconfig")
-
-      -- Configure LSP servers
-      lspconfig.pyright.setup({ capabilities = capabilities, on_attach = on_attach })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        init_options = { maxTsServerMemory = 10000 },
-      })
-      lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
-      lspconfig.rust_analyzer.setup({ capabilities = capabilities, on_attach = on_attach })
+      vim.lsp.enable({ "lua_ls", "rust_analyzer", "pyright", "ts_ls" })
     end,
   },
   {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-vsnip",
-      "hrsh7th/vim-vsnip",
+    "saghen/blink.cmp",
+    version = "*",
+    opts = {
+      keymap = {
+        preset = "none",
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<C-Space>"] = { "show", "fallback" },
+        ["<CR>"] = { "accept", "fallback" },
+        ["<C-e>"] = { "hide", "fallback" },
+        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+      },
+      appearance = {
+        nerd_font_variant = "mono",
+      },
+      sources = {
+        default = { "lsp", "path", "snippets", "buffer" },
+      },
+      cmdline = {
+        sources = { "cmdline" },
+      },
+      completion = {
+        documentation = { auto_show = true },
+      },
+      signature = { enabled = true },
+      enabled = function()
+        if vim.bo.buftype == "prompt" then return false end
+        if vim.bo.filetype == "log" then return false end
+        local ok, captures = pcall(vim.treesitter.get_captures_at_cursor, 0)
+        if ok then
+          for _, capture in ipairs(captures) do
+            if capture == "comment" then return false end
+          end
+        end
+        return true
+      end,
     },
-    config = function()
-      local cmp = require("cmp")
-
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
-          end,
-        },
-        enabled = function()
-          local context = require("cmp.config.context")
-          local inside_comment = context.in_treesitter_capture("comment")
-          local inside_log = vim.bo.filetype == "log"
-
-          local buftype = vim.api.nvim_buf_get_option(0, "buftype")
-          local is_prompt = buftype == "prompt"
-
-          return not inside_comment
-            and not inside_log
-            and not is_prompt
-        end,
-        mapping = {
-          ["<Up>"] = cmp.mapping.select_prev_item(),
-          ["<Down>"] = cmp.mapping.select_next_item(),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
-        },
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "nvim_lsp_signature_help" },
-          { name = "vsnip" },
-          { name = "path" },
-        }, {
-          { name = "buffer" },
-        }),
-      })
-
-      -- Cmdline completions
-      -- `/` and `?` = search from buffer
-      cmp.setup.cmdline({ "/", "?" }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer" }
-        }
-      })
-
-      -- `:` = commands + file paths
-      cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = "path" }
-        }, {
-          { name = "cmdline" }
-        })
-      })
-    end,
   }
 })
