@@ -49,6 +49,29 @@ Telescope Superkey - `<leader><leader>`
 - Git rebase (Continue) `:Grc`
 - Git rebase (Abort) `:Gra`
 
+### Diffview (GitHub/GitLab-style diffs)
+Diff Superkey - `<C-x>d`
+- Current `git diff` (working tree): `<C-x>dd`
+- Close the diff tab: `<C-x>dc` (or `q` from inside it)
+- Toggle the file panel: `<C-x>dt`
+- Repo commit history: `<C-x>dh`
+- Current file's history: `<C-x>df` (in visual mode: history for the selected lines)
+- `git show <sha>` — prompts for a rev: `<C-x>ds` (or `:Gsh <sha>`)
+- PR-style review vs the base branch: `<C-x>db` (or `:Gdb [branch]`)
+- Any other rev/range: `<C-x>dr` (or `:Gdr HEAD~3`, `:Gdr a..b`, `:Gdr -- src/`)
+
+Inside the diff view:
+- Next/prev file: `<Tab>` / `<S-Tab>`
+- Toggle split ⇄ unified layout: `g<C-x>`
+- Stage/unstage the file or hunk: `-` / `s`
+- Mark a file as reviewed: `m`
+- Open the real file: `gf`
+- Help for the buffer you're in: `g?`
+
+Note: this uses `dlyongemallo/diffview-plus.nvim`, the maintained fork of
+`sindrets/diffview.nvim` (upstream has had no commits since June 2024). Commands
+and config are identical, so swapping back is a one-line change.
+
 ### Mason (LSP)
 - GUI: `<C-x>m`
 

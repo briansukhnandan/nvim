@@ -512,6 +512,104 @@ require("lazy").setup({
       vim.api.nvim_create_user_command("Gra", "G rebase --abort", {})
     end,
   },
+  {
+    -- Actively maintained fork of the (abandoned) sindrets/diffview.nvim.
+    -- Drop-in: same `diffview` module, same :Diffview* commands.
+    "dlyongemallo/diffview-plus.nvim",
+    version = "*", -- follow tagged releases only
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = {
+      "DiffviewOpen",
+      "DiffviewClose",
+      "DiffviewFileHistory",
+      "DiffviewToggleFiles",
+      "DiffviewFocusFiles",
+      "DiffviewRefresh",
+    },
+    keys = {
+      { "<C-x>dd", "<cmd>DiffviewOpen<cr>", desc = "Diffview: current git diff" },
+      { "<C-x>dc", "<cmd>DiffviewClose<cr>", desc = "Diffview: close" },
+      { "<C-x>dt", "<cmd>DiffviewToggleFiles<cr>", desc = "Diffview: toggle file panel" },
+      { "<C-x>dh", "<cmd>DiffviewFileHistory<cr>", desc = "Diffview: repo history" },
+      { "<C-x>df", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview: current file history" },
+      { "<C-x>df", ":DiffviewFileHistory<cr>", mode = "v", desc = "Diffview: selected lines history" },
+      { "<C-x>ds", "<cmd>Gsh<cr>", desc = "Diffview: git show <rev>" },
+      { "<C-x>db", "<cmd>Gdb<cr>", desc = "Diffview: review vs base branch" },
+      { "<C-x>dr", "<cmd>Gdr<cr>", desc = "Diffview: diff arbitrary rev/range" },
+    },
+    config = function()
+      require("diffview").setup({
+        enhanced_diff_hl = true,
+        -- Better hunk pairing + intra-line highlights, GitHub/GitLab-ish.
+        -- Only applied while a Diffview tab is open, then restored.
+        diffopt = { algorithm = "histogram", indent_heuristic = true, linematch = 60 },
+        view = {
+          -- Split view by default; `g<C-x>` inside the view toggles to a
+          -- unified diff, same as GitHub's split/unified switch.
+          default = { layout = "diff2_horizontal", winbar_info = true },
+          file_history = { layout = "diff2_horizontal", winbar_info = true },
+          cycle_layouts = { default = { "diff2_horizontal", "diff1_inline" } },
+        },
+        file_panel = {
+          show_branch_name = true,
+          -- ■/□ marks let you tick files off as you review them
+          always_show_marks = true,
+        },
+        keymaps = {
+          view = { { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } } },
+          file_panel = { { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } } },
+          file_history_panel = { { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } } },
+        },
+      })
+
+      -- Nicer filler for deleted-line regions
+      vim.opt.fillchars:append({ diff = "╱" })
+
+      -- Resolve the remote's default branch, falling back to the usual names.
+      local function base_branch()
+        local ref = vim.fn.systemlist({ "git", "symbolic-ref", "--short", "refs/remotes/origin/HEAD" })
+        if vim.v.shell_error == 0 and ref[1] and ref[1] ~= "" then
+          return ref[1]
+        end
+        for _, branch in ipairs({ "origin/main", "origin/master", "main", "master" }) do
+          vim.fn.system({ "git", "rev-parse", "--verify", "--quiet", branch })
+          if vim.v.shell_error == 0 then
+            return branch
+          end
+        end
+        return nil
+      end
+
+      -- `git show <rev>` — just that commit's changes
+      vim.api.nvim_create_user_command("Gsh", function(opts)
+        local rev = opts.args
+        if rev == "" then
+          rev = vim.fn.input("git show rev: ")
+          if rev == "" then return end
+        end
+        vim.cmd("DiffviewOpen " .. rev .. "^!")
+      end, { nargs = "?", desc = "Diffview a single commit (git show)" })
+
+      -- PR-style review: everything on this branch since it left the base
+      vim.api.nvim_create_user_command("Gdb", function(opts)
+        local base = opts.args ~= "" and opts.args or base_branch()
+        if not base then
+          vim.notify("Couldn't determine a base branch", vim.log.levels.WARN)
+          return
+        end
+        vim.cmd("DiffviewOpen " .. base .. "...HEAD --imply-local")
+      end, { nargs = "?", desc = "Diffview HEAD against base branch merge-base" })
+
+      -- Escape hatch for anything else: `HEAD~3`, `a..b`, `-- path/`, etc.
+      vim.api.nvim_create_user_command("Gdr", function(opts)
+        local args = opts.args
+        if args == "" then
+          args = vim.fn.input("DiffviewOpen ")
+        end
+        vim.cmd("DiffviewOpen " .. args)
+      end, { nargs = "*", desc = "DiffviewOpen with arbitrary revs/args" })
+    end,
+  },
 
   -- LSP / Completion
   {
