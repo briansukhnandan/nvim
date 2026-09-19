@@ -510,6 +510,37 @@ require("lazy").setup({
       vim.api.nvim_create_user_command("Gpf", "G push --force", {})
       vim.api.nvim_create_user_command("Grc", "G rebase --continue", {})
       vim.api.nvim_create_user_command("Gra", "G rebase --abort", {})
+
+      -- <CR> on a file in the status viewer always lands in the real
+      -- working-tree file, never a read-only fugitive:// blob (fugitive
+      -- normally opens the index/HEAD version for lines under "Staged").
+      local function edit_real()
+        local keys = vim.api.nvim_replace_termcodes("<Plug>fugitive:<CR>", true, false, true)
+        vim.api.nvim_feedkeys(keys, "mx", false)
+
+        local name = vim.api.nvim_buf_get_name(0)
+        if not name:match("^fugitive://") then
+          return
+        end
+        local real = vim.fn["fugitive#Real"](name)
+        if real == "" or vim.fn.filereadable(real) == 0 then
+          return
+        end
+
+        local lnum = vim.fn.line(".")
+        vim.cmd.edit(vim.fn.fnameescape(real))
+        pcall(vim.api.nvim_win_set_cursor, 0, { math.min(lnum, vim.fn.line("$")), 0 })
+      end
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "fugitive",
+        callback = function(ev)
+          vim.keymap.set("n", "<CR>", edit_real, {
+            buffer = ev.buf,
+            desc = "Fugitive: open real file, not a fugitive:// blob",
+          })
+        end,
+      })
     end,
   },
 
